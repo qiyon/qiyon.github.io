@@ -9,7 +9,7 @@ var config = {
   entry: [
     'webpack/hot/dev-server',
     'webpack/hot/only-dev-server',
-    path.join(__dirname, '/src/app.jsx')
+    path.join(__dirname, '/src/app/app.jsx')
   ],
   //Config options on how to interpret requires imports
   resolve: {
@@ -47,7 +47,7 @@ var config = {
         //Eslint loader
         test: /\.(js|jsx)$/,
         loader: 'eslint-loader',
-        include: [path.resolve(__dirname, "src")],
+        include: [path.resolve(__dirname, "src/app")],
         exclude: [nodeModulesPath]
       },
     ],

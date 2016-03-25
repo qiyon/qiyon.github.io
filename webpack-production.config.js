@@ -5,7 +5,7 @@ var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 var TransferWebpackPlugin = require('transfer-webpack-plugin');
 
 var config = {
-  entry: [path.join(__dirname, '/src/app.jsx')],
+  entry: [path.join(__dirname, '/src/app/app.jsx')],
   resolve: {
     //When require, do not have to add these extensions to file's name
     extensions: ["", ".js", ".jsx"]
@@ -38,7 +38,7 @@ var config = {
       {
         test: /\.(js|jsx)$/,
         loader: 'eslint-loader',
-        include: [path.resolve(__dirname, "src")],
+        include: [path.resolve(__dirname, "src/app")],
         exclude: [nodeModulesPath]
       },
     ],
