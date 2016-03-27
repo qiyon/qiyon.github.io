@@ -28,7 +28,7 @@ var config = {
   devtool: 'eval',
   output: {
     path: buildPath + '/js',    //Path of output file
-    filename: 'app.js'
+    filename: 'js/app.js'
   },
   plugins: [
     //Enables Hot Modules Replacement
