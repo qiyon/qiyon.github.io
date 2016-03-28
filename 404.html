@@ -14,5 +14,12 @@
     
 </body>
 
+<script>
+    var url = window.location.pathname + window.location.search + window.location.hash;
+    //console.log(url);
+    //console.log(window.location);
+    window.location = '/?to=' + encodeURIComponent(url);
+</script>
+
 </html>
 
