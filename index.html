@@ -30,19 +30,21 @@
         })();
     </script>
     <script>
-        var search = window.location.search;
-        if (search) {
-            search = search.substr(1);
-            var searchItems = search.split('&');
-            var searchItems = searchItems.map(function(item){return item.split('=')});
-            var item;
-            for(itemIndex in searchItems){
-                item = searchItems[itemIndex];
-                if (item[0] && item[1] && item[0] == 'to') {
-                    history.pushState({},'...',decodeURIComponent(item[1]));
+        (function (window) {
+            var search = window.location.search;
+            if (search) {
+                search = search.substr(1);
+                var searchItems = search.split('&');
+                var searchItems = searchItems.map(function(item){return item.split('=')});
+                var item;
+                for(var itemIndex in searchItems){
+                    item = searchItems[itemIndex];
+                    if (item[0] && item[1] && item[0] == 'to') {
+                        window.history.pushState({},'...',decodeURIComponent(item[1]));
+                    }
                 }
             }
-        }
+        })(window);
     </script>
     <script src="/js/app.js"></script>
 </body>

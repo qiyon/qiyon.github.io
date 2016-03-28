@@ -4,21 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>QiyonSite</title>
-    <meta name="description" content="qiyon.github.io www.heqiyong.com qiyon">
+    <meta name="description" content="rewrite page">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
 </head>
 
 <body>
-    ...
-    
+    <p>...</p>
 </body>
 
 <script>
-    var url = window.location.pathname + window.location.search + window.location.hash;
-    //console.log(url);
-    //console.log(window.location);
-    window.location = '/?to=' + encodeURIComponent(url);
+    (function (window) {
+        var url = window.location.pathname + window.location.search + window.location.hash;
+        window.location = '/?to=' + encodeURIComponent(url);
+    })(window);
 </script>
 
 </html>
