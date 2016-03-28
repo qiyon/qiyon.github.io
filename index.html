@@ -40,7 +40,7 @@
                 for(var itemIndex in searchItems){
                     item = searchItems[itemIndex];
                     if (item[0] && item[1] && item[0] == 'to') {
-                        window.history.pushState({},'...',decodeURIComponent(item[1]));
+                        window.history.replaceState({}, '', decodeURIComponent(item[1]));
                     }
                 }
             }
