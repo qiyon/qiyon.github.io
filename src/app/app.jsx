@@ -14,8 +14,8 @@ injectTapEventPlugin();
 
 //run
 ReactDOM.render(
-    <Router history={browserHistory} onUpdate={() => window.scrollTo(0, 0)} >
-        {AppRoutes}
-    </Router>,
-    document.getElementById('app')
+  <Router history={browserHistory} onUpdate={() => window.scrollTo(0, 0)}>
+    {AppRoutes}
+  </Router>,
+  document.getElementById('app')
 );
