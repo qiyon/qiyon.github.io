@@ -4,6 +4,7 @@ import FlatButton from 'material-ui/lib/flat-button';
 import IconButton from 'material-ui/lib/icon-button';
 import HomeIcon from 'material-ui/lib/svg-icons/action/home';
 import FullWidthSection from './FullWidthSection';
+import {Colors} from 'material-ui/lib/styles';
 
 const Master = React.createClass({
   contextTypes: {
@@ -20,8 +21,8 @@ const Master = React.createClass({
       position: 'fixed',
     };
     const footerStyles = {
-      backgroundColor: '#212121',
-      color: '#ffffff',
+      backgroundColor: Colors.grey900,
+      color: Colors.lightWhite,
       textAlign: 'center',
     };
     return (
@@ -38,7 +39,6 @@ const Master = React.createClass({
           <p> Powered By </p>
           <p> React </p>
           <p> Material-UI </p>
-          <p> Qiyong He </p>
           <p> www.heqiyong.com </p>
         </FullWidthSection>
       </div>
