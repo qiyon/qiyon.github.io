@@ -57,7 +57,7 @@ iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth0 -j MASQUERADE
 即将`192.168.0.*`的请求通过`nat`的方式转发给`eth0`，并返回的结果送回`192.168.0.*`，从而实现vpn的效果。
 
 
-##重启相关
+##重启计算机
 `注意`，服务器重启后，`iptables`的设置也会清空，需要重新设置`iptables`转发。
 
 或者通过别的方式自动在重启时恢复相应的`iptables`设置
