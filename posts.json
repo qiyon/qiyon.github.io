@@ -1,7 +1,7 @@
 [
   {
     "id": "Install-the-pptp-VPN-server-in-Ubuntu",
-    "title": "Ubuntu安装Shadowsocks服务端",
+    "title": "Ubuntu安装pptpd的VPN服务器",
     "time": "2016-01-03 16:50:33",
     "tag": "linux,VPN,Ubuntu,pptp"
   }
