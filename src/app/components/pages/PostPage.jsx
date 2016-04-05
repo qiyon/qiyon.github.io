@@ -39,7 +39,9 @@ const PostPage = React.createClass({
   render() {
     return (
       <FullWidthSection>
-        <div dangerouslySetInnerHTML={{__html: this.state.postHtml}}/>
+        <div style={{maxWidth:'1000px',margin:'auto'}}>
+          <div dangerouslySetInnerHTML={{__html: this.state.postHtml}}/>
+        </div>
       </FullWidthSection>
     );
   },

@@ -14,6 +14,7 @@ const HomePage = React.createClass({
     return {
       keyword: "",
       posts: [],
+      postsShow: [],
     };
   },
   componentDidMount: function () {
@@ -21,11 +22,36 @@ const HomePage = React.createClass({
       this.setState({
         posts: data,
       });
+      this.filterPosts(this.state.keyword);
     }).bind(this), (function (err) {
     }).bind(this));
   },
+  handleChange: function (event) {
+    let newKeyword = event.target.value || '';
+    this.setState({keyword: newKeyword});
+    this.filterPosts(newKeyword);
+  },
+  filterPosts: function (keyword) {
+    let filterPosts = [];
+    if (keyword) {
+      keyword = keyword.toLowerCase();
+      filterPosts = this.state.posts.filter((function (onePost) {
+        for (let col of ['id', 'title', 'tag']) {
+          if (onePost[col].toLowerCase().indexOf(keyword) >= 0) {
+            return true;
+          }
+        }
+        return false;
+      }));
+    } else {
+      filterPosts = this.state.posts;
+    }
+    this.setState({
+      postsShow: filterPosts,
+    });
+  },
   render() {
-    let posts = this.state.posts.map(function (postData) {
+    let posts = this.state.postsShow.map(function (postData) {
       return (
         <Card key={postData.id}>
           <CardText>
@@ -36,14 +62,19 @@ const HomePage = React.createClass({
     });
     return (
       <FullWidthSection>
-        <Card>
-          <CardText>
-            <TextField
-              floatingLabelText="搜索"
-            />
-          </CardText>
-        </Card>
-        {posts}
+        <div style={{maxWidth:'1000px',margin:'auto'}}>
+          <Card>
+            <CardText>
+              <TextField
+                floatingLabelText="搜索"
+                fullWidth={true}
+                value={this.state.keyword}
+                onChange={this.handleChange}
+              />
+            </CardText>
+          </Card>
+          {posts}
+        </div>
       </FullWidthSection>
     );
   },
