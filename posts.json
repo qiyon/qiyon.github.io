@@ -1,6 +1,6 @@
 [
   {
-    "id": "Install-the-pptp-VPN-server-in-Ubuntu",
+    "id": "install-the-pptpd-vpn-server-with-ubuntu",
     "title": "Ubuntu安装pptpd的VPN服务器",
     "time": "2016-01-03 16:50:33",
     "tag": "linux,vpn,ubuntu,pptp"
@@ -12,25 +12,25 @@
     "tag": "php,windows,https"
   },
   {
-    "id": "Install-ShadowSocks-server-undex-Ubuntu",
+    "id": "install-shadowsocks-server-with-ubuntu",
     "title": "Ubuntu安装ShadowSocks服务端",
     "time": "2015-12-27 23:54:57",
     "tag": "linux,ubuntu,ss,shadowsocks"
   },
   {
-    "id": "SSH-terminal-MobaXterm",
+    "id": "ssh-terminal-software-mobaxterm",
     "title": "SSH终端-MobaXterm",
     "time": "2015-12-24 10:18:45",
     "tag": "ssh,terminal,mobaxterm"
   },
   {
-    "id": "Ctrl-Z-in-linux",
+    "id": "ctrl-z-in-linux-cli",
     "title": "Linux关于Ctrl-Z",
     "time": "2015-12-21 15:24:48",
     "tag": "linux,jobs,fg"
   },
   {
-    "id": "Custom-increases-Swap-in-linux",
+    "id": "custom-increases-swap-in-the-linux",
     "title": "自定义增加Swap",
     "time": "2015-12-21 14:39:37",
     "tag": "linux,swap"
@@ -48,7 +48,7 @@
     "tag": "zsh,ohmyzsh,git"
   },
   {
-    "id": "compiler-install-php7-beta",
+    "id": "compile-install-php7-beta",
     "title": "PHP7beta版编译安装笔记",
     "time": "2015-08-07 16:50:36",
     "tag": "php,php7,compiler,install"
