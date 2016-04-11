@@ -80,9 +80,12 @@ Tools --> Terminal --> shell path 设置为 powershell.exe
 ```
 VCS --> Integrate Project
 
-Source 1 选择Head版本
-Source 2 选择要回滚到的commit reversion
+Source 1 选择Head版本, 即当前SVN最新状态
+Source 2 选择要回滚到的commit revision
 ```
-此功能类似于SVN命令行下的merge
+此功能类似于SVN命令行下, merge指定版本
+```
+svn merge -r <Head Revision>:<To Revision> <Path merge作用的目录>
+```
 
 再将更改后的代码`commit`到SVN。
