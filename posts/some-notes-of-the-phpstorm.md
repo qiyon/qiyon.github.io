@@ -41,7 +41,7 @@ Ctrl + Alt + F12    显示文件的路径层级，打开对应的文件夹
 Shift + Esc         隐藏Log、Version Control、Terminal等框
 ```
 
-### 一些设置
+### 设置换行符
 设置新建文件的行分割符格式,即Unix(\n),Window(\n\r),classic Mac(\r)三种中选择：
 ```
 phpStrom 8:
@@ -51,23 +51,38 @@ phpStorm 9:
 Settings --> Editor --> Code Style  --> Line separator
 ```
 
-设置文件编码
+### 设置文件编码
 ```
 Settings --> Editor --> File Encodings --> Project Encoding
 ```
 
-设置代码折叠
+### 设置代码折叠
 ```
 Settings --> Editor --> General  --> Code Folding
 我一般全部不选
 ```
 
-### 一些技巧
+### 让PhpStorm不语法分析某个文件
 让PhpStorm不加载某个文件，即在查找类声明是不会从某个文件查找，对于某些框架的带压缩版本的文件的有奇效..
 ```
 project --> 右键文件 --> Mark as Plain Text
 ```
-设置terminal为`PowerShell`
+
+### 设置terminal为`PowerShell`
 ```
 Tools --> Terminal --> shell path 设置为 powershell.exe
 ```
+
+### SVN回滚代码
+先将代码设置到SVN最新版本，保持一致。
+
+使用
+```
+VCS --> Integrate Project
+
+Source 1 选择Head版本
+Source 2 选择要回滚到的commit reversion
+```
+此功能类似于SVN命令行下的merge
+
+再将更改后的代码`commit`到SVN。
