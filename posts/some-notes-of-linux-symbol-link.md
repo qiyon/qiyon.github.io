@@ -1,10 +1,12 @@
-###Linux链接文件
+# Linux链接文件
+
+## 文件链接
 在linux中，一个文件可以指向另外一个文件，实现两个文件的等效。生成链接文件通过ln命令，有两种方式，为软链接和硬链接，指定时-s来区分（-s 生成软链接）。
 ```
 ##ln -s [原文件]  [生成链接文件]
 ln -s file.txt  file-symlink.txt
 ls -la 
-file-symlink -> file.txt
+file-symlink.txt -> file.txt
 ```
 对于-s生成的链接文件，为软链接，删除时，不会影响原文件，索引方式为：
 ```
@@ -17,7 +19,7 @@ file-symlink -> file.txt
 
 两者的详细区别，可以学习或者查看linux文件系统的相关资料，关于inode和block的部分，会有更深入的理解。
 
-####**应用**
+## 应用
 当自己编译安装一个程序时，如VIM、PHP、Apache等。一般会选择一个安装目录，多数为/usr/local/vim74 , /usr/local/php5/ . /usr/local/apahce2等，安装好的程序要在终端中使用，需要使用全路径，或者加alias，或者ln一个链接文件。
 
 **第一个办法**是使用alias的方法，对于当前用户，在 ~/.bashrc 文件中加入一个alias， 再source一下 .bashrc 文件
@@ -33,5 +35,6 @@ echo $PATH
 ```
 ln -s /usr/local/vim74/bin/vim  /usr/local/bin/vim
 ```
------------------------------------------
-***对于文件夹的链接，待续。。。。。。***
+
+## 文件夹链接
+> 对于文件夹的链接，待续。
