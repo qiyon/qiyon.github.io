@@ -37,13 +37,13 @@
   },
   {
     "id": "js-filtering-html-element",
-    "title": "js实现保留指定html标签",
+    "title": "Js实现保留指定html标签",
     "time": "2015-11-18 15:34:01",
     "tag": "js,javascript,html,filter"
   },
   {
     "id": "close-oh-my-zsh-git-plugin",
-    "title": "关闭oh_my_zsh的git插件",
+    "title": "关闭oh-my-zsh的git插件",
     "time": "2015-08-07 22:24:08",
     "tag": "zsh,ohmyzsh,git"
   },
@@ -79,7 +79,7 @@
   },
   {
     "id": "download-box-from-vagrant-cloud",
-    "title": "从vagrantcloud_dot_com下载box",
+    "title": "从vagrantcloud.com下载box",
     "time": "2015-06-11 18:24:10",
     "tag": "vagrant,vagrantcloud"
   },
@@ -133,7 +133,7 @@
   },
   {
     "id": "ubuntu-use-sysv-rc-conf-to-manage-services",
-    "title": "ubuntu利用sysv_rc_conf设置服务启动",
+    "title": "ubuntu利用sysv-rc-conf设置服务启动",
     "time": "2015-03-02 18:24:44",
     "tag": "linux,ubuntu,service,sysv"
   },
@@ -175,7 +175,7 @@
   },
   {
     "id": "vagrant-re-associated-lost-virtualbox-again",
-    "title": "vagrant关联丢失的virtualbox",
+    "title": "vagrant重新关联丢失的virtualbox",
     "time": "2015-01-01 22:09:42",
     "tag": "vagrant,vbox,virtualbox,link"
   },
@@ -241,13 +241,13 @@
   },
   {
     "id": "yii-1-knowledge-about-cdbcriteria",
-    "title": "Yii之CDbCriteria",
+    "title": "Yii之CDbCriteria笔记",
     "time": "2014-10-23 21:48:34",
     "tag": "php,yii,cdbcriteria"
   },
   {
     "id": "mysql-knowledge-about-distinct-and-group-by",
-    "title": "mysql之distinct_AND_group_by",
+    "title": "mysql之distinct与group_by",
     "time": "2014-09-23 15:45:08",
     "tag": "mysql,distinct,group,groupby"
   },
@@ -259,31 +259,31 @@
   },
   {
     "id": "some-always-usage-of-js-and-jquery",
-    "title": "Js__AND__Jquery常用",
+    "title": "Js和Jquery常用",
     "time": "2014-09-09 17:54:31",
     "tag": "js,javascript,jqeury"
   },
   {
     "id": "some-notes-of-svn",
-    "title": "svn_note",
+    "title": "svn的一些笔记",
     "time": "2014-09-09 11:02:50",
     "tag": "svn,subversion"
   },
   {
     "id": "some-notes-of-ssh-scp",
-    "title": "scp_note",
+    "title": "ssh的scp记录",
     "time": "2014-09-09 10:06:37",
     "tag": "ssh,scp"
   },
   {
     "id": "vim-7-4-compiler-install",
-    "title": "VIM7_dot_4编译安装",
+    "title": "VIM7.4编译安装",
     "time": "2014-09-08 21:00:14",
     "tag": "vim,compiler,install"
   },
   {
     "id": "some-usage-of-html-hash",
-    "title": "Html之hash",
+    "title": "Html之hash的js获取",
     "time": "2014-09-08 20:21:29",
     "tag": "js,html,hash"
   },
@@ -307,31 +307,31 @@
   },
   {
     "id": "some-notes-of-apt-get",
-    "title": "apt_get_note",
+    "title": "ubuntu-apt-get笔记",
     "time": "2014-08-30 21:00:46",
     "tag": "linux,ubuntu,apt,aptget"
   },
   {
     "id": "some-notes-of-professional-javascript-for-web-developers",
-    "title": "JavaScript高级程序设计(第三版)_笔记",
+    "title": "JavaScript高级程序设计(第三版)-笔记",
     "time": "2014-08-30 18:53:58",
     "tag": "js,javascript,book"
   },
   {
     "id": "some-notes-of-firefox-flash-in-linux",
-    "title": "linux_firefox_flash",
+    "title": "linux下firefox-flash相关",
     "time": "2014-08-29 22:48:30",
     "tag": "linux,flash,firefox"
   },
   {
     "id": "some-notes-of-yii-1-shell",
-    "title": "Yiic_shell",
+    "title": "Yii-Yiic的shell功能",
     "time": "2014-08-26 18:28:28",
     "tag": "php,yii,shell"
   },
   {
     "id": "some-settings-of-php-error",
-    "title": "PHP_error设置",
+    "title": "PHP的error相关设置",
     "time": "2014-08-23 21:36:38",
     "tag": "php,error"
   },
@@ -349,31 +349,31 @@
   },
   {
     "id": "some-notes-of-laravel-4",
-    "title": "Laravel_4_Note",
+    "title": "Laravel-4的一些笔记",
     "time": "2014-08-22 18:30:06",
     "tag": "php,laravel"
   },
   {
     "id": "php-about-cli-web-server",
-    "title": "PHP_5_dot_4_Web_Server",
+    "title": "PHP5.4的WebServer",
     "time": "2014-08-21 17:45:53",
     "tag": "php,cli,server"
   },
   {
     "id": "apache-multiple-ports-settings",
-    "title": "Apache2_dot_4_配置多端口",
+    "title": "Apache2.4配置多端口",
     "time": "2014-08-20 10:40:25",
     "tag": "apache,settings"
   },
   {
     "id": "mysql-import-export-sql-file",
-    "title": "mysql数据库导入导出_sql文件",
+    "title": "Mysql数据库导入导出sql文件",
     "time": "2014-08-19 16:25:42",
     "tag": "mysql,dump,import,export"
   },
   {
     "id": "php-install-redis-extension",
-    "title": "php_redis扩展安装",
+    "title": "php安装redis扩展",
     "time": "2014-08-19 16:03:07",
     "tag": "php,extentsion,redis"
   },

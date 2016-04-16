@@ -1,8 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router';
 import FullWidthSection from '../FullWidthSection';
 import Card from 'material-ui/lib/card/card';
 import CardText from 'material-ui/lib/card/card-text';
+import CardHeader from 'material-ui/lib/card/card-header';
 import TextField from 'material-ui/lib/text-field';
 import $ from 'jquery';
 
@@ -31,6 +31,9 @@ const HomePage = React.createClass({
     this.setState({keyword: newKeyword});
     this.filterPosts(newKeyword);
   },
+  handleClickPost: function (id) {
+    this.context.router.push('/post/' + id);
+  },
   filterPosts: function (keyword) {
     let filterPosts = [];
     if (keyword) {
@@ -51,13 +54,18 @@ const HomePage = React.createClass({
     });
   },
   render() {
+    let postCardStyles = {
+      cursor: 'pointer',
+      marginTop: '12px',
+    };
+    let componentSelf = this;
     let posts = this.state.postsShow.map(function (postData) {
       return (
-        <Card key={postData.id}>
-          <CardText>
-            <Link to={'/post/' + postData.id}>{postData.title}</Link>
-          </CardText>
-        </Card>
+        <div onClick={componentSelf.handleClickPost.bind(null, postData.id)} key={postData.id} style={postCardStyles}>
+          <Card >
+            <CardHeader title={postData.title} subtitle={postData.time.substr(0, 10)}/>
+          </Card>
+        </div>
       );
     });
     return (
