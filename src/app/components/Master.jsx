@@ -4,7 +4,7 @@ import FlatButton from 'material-ui/lib/flat-button';
 import IconButton from 'material-ui/lib/icon-button';
 import HomeIcon from 'material-ui/lib/svg-icons/action/home';
 import FullWidthSection from './FullWidthSection';
-import {Colors} from 'material-ui/lib/styles';
+import {Colors, Spacing} from 'material-ui/lib/styles';
 
 const Master = React.createClass({
   contextTypes: {
@@ -32,7 +32,7 @@ const Master = React.createClass({
           iconElementRight={<FlatButton label="关于" linkButton={true}  onTouchTap={this.handleTouchTapAbout}  />}
           style={appBarStyles}
         />
-        <div style={{ minHeight: '100vh' }}>
+        <div style={{ minHeight: '100vh', paddingTop: Spacing.desktopKeylineIncrement}}>
           {this.props.children}
         </div>
         <FullWidthSection style={footerStyles}>
