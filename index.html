@@ -21,7 +21,7 @@
       search = search.substr(1);
       var searchItems = search.split('&');
       searchItems = searchItems.map(function (item) {
-        return item.split('=')
+        return item.split('=');
       });
       var item;
       for (var itemIndex in searchItems) {
