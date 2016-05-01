@@ -18,24 +18,40 @@ const HomePage = React.createClass({
     };
   },
   componentDidMount: function () {
-    $.get('/posts.json').then((function (data) {
-      this.setState({
-        posts: data,
+    const POSTS_JSON_KEY = 'QIYONG_POSTS_JSON_KEY';
+    let _self = this;
+    //get datas from storage
+    let ls_datas = window.localStorage.getItem(POSTS_JSON_KEY);
+    if (ls_datas) {
+      _self.setState({posts: JSON.parse(ls_datas)}, function () {
+        _self.filterPosts();
       });
-      this.filterPosts(this.state.keyword);
-    }).bind(this), (function (err) {
-    }).bind(this));
+    }
+    //ajax datas, if different ,update
+    $.get('/posts.json').then(function (data) {
+      let stringifyDatas = JSON.stringify(data);
+      if (window.localStorage.getItem(POSTS_JSON_KEY) !== stringifyDatas) {
+        window.localStorage.setItem(POSTS_JSON_KEY, stringifyDatas);
+        _self.setState({posts: data}, function () {
+          _self.filterPosts();
+        });
+      }
+    }, function (err) {
+    });
   },
   handleChange: function (event) {
     let newKeyword = event.target.value || '';
-    this.setState({keyword: newKeyword});
-    this.filterPosts(newKeyword);
+    let _self = this;
+    this.setState({keyword: newKeyword}, function () {
+      _self.filterPosts();
+    });
   },
   handleClickPost: function (id) {
     this.context.router.push('/post/' + id);
   },
-  filterPosts: function (keyword) {
+  filterPosts: function () {
     let filterPosts = [];
+    let keyword = this.state.keyword;
     if (keyword) {
       keyword = keyword.toLowerCase();
       filterPosts = this.state.posts.filter((function (onePost) {
@@ -78,6 +94,11 @@ const HomePage = React.createClass({
                 fullWidth={true}
                 value={this.state.keyword}
                 onChange={this.handleChange}
+                ref={function(textInput){
+                  if (textInput != null){
+                    textInput.focus();
+                  }
+                }}
               />
             </CardText>
           </Card>
