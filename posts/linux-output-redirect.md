@@ -38,7 +38,7 @@ ls notHasFile 2> erroutfile.txt
 
 
 ### 标准出错和标准输出
-如果要将标准出错`STDERROR`和标准输出`STDOUT`重定向到同一位置，使用`>&`，如
+如果要将标准出错`STDERR`和标准输出`STDOUT`重定向到同一位置，使用`>&`，如
 ```
 ls xxx >& outfile.txt
 ```
@@ -46,7 +46,7 @@ ls xxx >& outfile.txt
 ```
 ls xxx > outfile.txt 2>&1
 ```
-表示将标准输出`STDOUT`重定向到`outfile.txt`，将标准出错`STDERROR`重定向到标准输出。
+表示将标准输出`STDOUT`重定向到`outfile.txt`，将标准出错`STDERR`重定向到标准输出。
 
 
 
