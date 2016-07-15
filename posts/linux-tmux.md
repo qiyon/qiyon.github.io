@@ -35,7 +35,7 @@ tmux kill-session -t name-or-number
 
 可通过 (prefix + :tmux kill-session -t name-or-number)关闭指定session
 ```
-### session相关
+### Session相关
 ```
 显示session列表并选择                prefix + s
 离开(detach)session                 prefix + d
