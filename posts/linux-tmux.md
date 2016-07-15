@@ -26,7 +26,7 @@ tmux kill-session -t name-or-number
 启动`tmux`后，终端会发生相应变化，下方会显示具体的`session`和`window`信息。
 
 ## tmux基本操作
-基本操作需要一个前置操作来引导，避免快捷键冲突，默认前置快捷键为`ctrl-b`，以下用`prefix`来表示和代替
+基本操作需要一个前置操作来引导，避免多余的快捷键冲突，默认前置快捷键为`ctrl-b`，以下用`prefix`表示
 
 ### 基本
 ```
@@ -49,13 +49,15 @@ tmux kill-session -t name-or-number
 关闭当前窗口                          prefix + &
 切换到指定窗口                        prefix + (0-9)
 ```
+在最后一个窗口下最后一个终端中执行`exit`可退出并关闭该窗口。
 
 ### Pane相关
 ```
 垂直拆分新窗格                       prefix + "
 水平拆分新窗格                       prefix + %
 查看所有窗口的号码                   prefix + q
-切换制定窗口                         prefix + q + (0-9)
+切换指定窗口                         prefix + q + (0-9)
 切换到下一个窗格                     prefix + 0
 放大(恢复)窗格                       prefix + z
 ```
+在对应窗格中执行`exit`可关闭此窗格。
