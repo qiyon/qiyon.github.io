@@ -1,5 +1,11 @@
 [
   {
+    "id": "linux-tmux",
+    "title": "Linux-Tmux记录",
+    "time": "2016-07-15 22:45:00",
+    "tag": "linux,tmux,command,cli"
+  },
+  {
     "id": "install-the-pptpd-vpn-server-with-ubuntu",
     "title": "Ubuntu安装pptpd的VPN服务器",
     "time": "2016-01-03 16:50:33",
