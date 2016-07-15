@@ -38,26 +38,26 @@ tmux kill-session -t name-or-number
 ### Session相关
 ```
 显示session列表并选择                prefix + s
-离开(detach)session                 prefix + d
+离开(detach)session                  prefix + d
 重命名sesssion名称                   prefix + $
 ```
 
 ### Window相关
 ```
-新建窗口                             prefix + c
+新建窗口                              prefix + c
 切换上一个活动窗口                    prefix + space
 关闭当前窗口                          prefix + &
 切换到指定窗口                        prefix + (0-9)
 ```
-在最后一个窗口下最后一个终端中执行`exit`可退出并关闭该窗口。
+在窗口的最后一个终端中执行`exit`可退出并关闭该窗口。
 
 ### Pane相关
 ```
-垂直拆分新窗格                       prefix + "
-水平拆分新窗格                       prefix + %
-查看所有窗口的号码                   prefix + q
-切换指定窗口                         prefix + q + (0-9)
-切换到下一个窗格                     prefix + 0
-放大(恢复)窗格                       prefix + z
+垂直拆分新窗格                        prefix + "
+水平拆分新窗格                        prefix + %
+查看所有窗口的号码                    prefix + q
+切换指定窗口                          prefix + q + (0-9)
+切换到下一个窗格                      prefix + 0
+放大(恢复)窗格                        prefix + z
 ```
 在对应窗格中执行`exit`可关闭此窗格。
