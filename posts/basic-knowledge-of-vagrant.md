@@ -36,6 +36,11 @@ vagrant默认的ssh端口为主机的2222端口，可以通过以下配置自定
 config.vm.network :forwarded_port, guest: 22, host: 2221, id: 'ssh'
 ```
 
+## Box默认配置
+`vagrant` 的容器，自身有个默认的 `Vagrantfile` 配置文件，对应的位置为 `~/.vagrant.d/boxes/<your_box_name>/<version_?0>/virtualbox/Vagrantfile` 。
+
+可以查看此文件，并参考官方文档，就可以知道容器的默认设置。
+
 ## 启动
 在Vagrantfile所在的目录下，执行`vagrant up`启动虚拟机。
 
