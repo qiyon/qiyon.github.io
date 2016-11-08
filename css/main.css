@@ -19,7 +19,7 @@ pre {
   padding: 5px;
   border: solid 1px grey;
   border-radius: 2px;
-  font-family: Consolas, monospace, "Microsoft Yahei";
+  font-family: Consolas, Menlo, Monaco, monospace, "Microsoft Yahei";
 }
 
 pre code {
