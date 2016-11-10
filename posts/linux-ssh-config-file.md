@@ -17,7 +17,7 @@ Host *
     ControlPath ~/.ssh/%h-%r-%p
     ControlPersist 4h
 ``` 
-其中 `ControlMaster auth` 表示复用 ssh session 连接，每次建立连接是查看是否有连接存在，连接记录在 `ControlPath` 对应的文件中，`ControlPersist` 表示连接持久化，退出后保存四小时。
+其中 `ControlMaster auto` 表示复用 ssh session 连接，每次建立连接是查看是否有连接存在，连接记录在 `ControlPath` 对应的文件中，`ControlPersist` 表示连接持久化，退出后保存四小时。
 
 
 ## 主机单独配置
