@@ -17,7 +17,7 @@ Host *
     ControlPath ~/.ssh/%h-%r-%p
     ControlPersist 4h
 ``` 
-其中 `ControlMaster auto` 表示复用 ssh session 连接，每次建立连接是查看是否有连接存在，连接记录在 `ControlPath` 对应的文件中，`ControlPersist` 表示连接持久化，退出后保存四小时。
+其中 `ControlMaster auto` 表示复用 ssh session 连接，每次建立连接是查看是否有连接存在，连接记录在 `ControlPath` 对应的文件中，`ControlPersist` 表示连接持久化，连接关闭后保存四小时。
 
 
 ## 主机单独配置
@@ -29,9 +29,9 @@ Host one_word
     User root
     Port 22
 ```
-除了地址、端口、用户名等基本信息，还可以指定密钥等，密钥设置使用 `IdentityFile`，并且可以覆盖 `Host *` 中的同名配置。
+除了地址、端口、用户名等基本信息，还可以指定密钥等，密钥设置使用 `IdentityFile` 字段，以及可以覆盖 `Host *` 中的同名配置。
 
-密钥登陆是在服务器管理中比较常用的方式，将公钥(如 `id_rsa.pub`)添加到服务器用户对应的授权 key 中(`~/.ssh/authorized_keys`，一般服务器默认允许密钥登陆)。则可以在 ssh 连接指定以密钥登陆，需指定私钥(如 `id_rsa`)，自动需要同目录下同名的公钥(即 `id_rsa.pub`)。
+密钥登陆是在服务器管理中比较常用的方式，将公钥(如 `id_rsa.pub`)添加到服务器用户对应的授权 key 中(`~/.ssh/authorized_keys`，一般服务器默认允许密钥登陆)。则可以在 ssh 命令中指定以密钥登陆，需指定私钥(如 `id_rsa`)，自动寻找同目录下同名的公钥(即 `id_rsa.pub`)。
 
-Ps：私钥可以再加上一个口令加密，减少被盗用时的风险。
+Ps：私钥可以再加上一个口令加密，降低被盗用时的风险。
 
