@@ -2,14 +2,14 @@
 
 ## 概述
 
-linux 或 unix 中使用 ssh 访问远端系统，不像 windows 下一般使用第三方的客户端，而是在系统 terminal 中使用使用 ssh 命令。
+linux 或 unix 中使用 ssh 访问远端系统，不像 windows 下一般使用第三方的客户端，而是在系统 terminal 中直接使用 ssh 命令。
 
-在管理多个远端服务器的时候，只有使用 ssh 并输入每个远端服务器的 Host 、用户名、密码（或密钥）并不方便，此时在 ssh 的 config 文件（`~/.ssh/config`）中进行相关配置，可以很好的使用 ssh。
+在管理多个远端服务器的时候，直接使用 ssh 输入每个远端服务器对应的 Host 、用户名、密码（或密钥）并不方便，此时在 ssh 的 config 文件（`~/.ssh/config`）中进行相关配置，可以很好的管理和使用 ssh 连接。
 
 
 ## 通用配置 
 
-在 config 文件中，可以使用通用配置，配置所有 ssh 连接，使用 `Host *` 来配置，如：
+在 config 文件中，可以通过`Host *` 来配置所有 ssh 连接，如：
 
 ```
 Host *
@@ -17,7 +17,7 @@ Host *
     ControlPath ~/.ssh/%h-%r-%p
     ControlPersist 4h
 ``` 
-其中 `ControlMaster auth` 表示复用 ssh session 连接，每次建立连接是查看是否有连接存在，连接记录在 `ControlPath` 对应的文件中，`ControlPersist` 表示连接持久化，退出后保存四小时。
+其中 `ControlMaster auto` 表示复用 ssh session 连接，每次建立连接是查看是否有连接存在，连接记录在 `ControlPath` 对应的文件中，`ControlPersist` 表示连接持久化，退出后保存四小时。
 
 
 ## 主机单独配置
