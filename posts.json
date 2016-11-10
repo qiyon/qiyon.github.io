@@ -1,5 +1,11 @@
 [
   {
+    "id": "linux-ssh-config-file",
+    "title": "Linux下ssh使用config文件配置",
+    "time": "2016-11-10 12:20:00",
+    "tag": "linux,ssh,config"
+  },
+  {
     "id": "linux-tmux",
     "title": "Linux-Tmux记录",
     "time": "2016-07-15 22:45:00",
