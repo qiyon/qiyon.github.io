@@ -5,6 +5,7 @@ import CardText from 'material-ui/lib/card/card-text';
 import CardHeader from 'material-ui/lib/card/card-header';
 import TextField from 'material-ui/lib/text-field';
 import $ from 'jquery';
+import { browserHistory } from 'react-router';
 
 const HomePage = React.createClass({
   contextTypes: {
@@ -19,7 +20,9 @@ const HomePage = React.createClass({
   },
   componentDidMount: function () {
     const POSTS_JSON_KEY = 'QIYONG_POSTS_JSON_KEY';
+    let keyword = this.props.params.word || '';
     let _self = this;
+    this.setState({keyword: keyword});
     //get datas from storage
     let ls_datas = window.localStorage.getItem(POSTS_JSON_KEY);
     if (ls_datas) {
@@ -41,6 +44,7 @@ const HomePage = React.createClass({
   },
   handleChange: function (event) {
     let newKeyword = event.target.value || '';
+    browserHistory.replace('/home' + (newKeyword ? '/' + newKeyword : ''));
     let _self = this;
     this.setState({keyword: newKeyword}, function () {
       _self.filterPosts();
@@ -96,7 +100,7 @@ const HomePage = React.createClass({
                 onChange={this.handleChange}
                 ref={function(textInput){
                   if (textInput != null){
-                    textInput.focus();
+                    //textInput.focus();
                   }
                 }}
               />
@@ -110,3 +114,4 @@ const HomePage = React.createClass({
 });
 
 export default HomePage;
+
