@@ -23,7 +23,8 @@ var config = {
     hot: true,        //Live-reload
     inline: true,
     host:'127.0.0.1',
-    port: 18003        //Port Number
+    port: 18003,        //Port Number
+    historyApiFallback:true
   },
   devtool: 'eval',
   output: {
