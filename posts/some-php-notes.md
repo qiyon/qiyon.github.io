@@ -1,6 +1,6 @@
-#一些PHP记录
+# 一些PHP记录
 
-##函数参数
+## 函数参数
 获取函数调用时传入的参数，通过函数`func_get_args()`：
 ```
 <?php
@@ -28,15 +28,16 @@ test.php
 hello
 ```
 
-##设置默认值
+## 设置默认值
 对于数组中不存在的键设置默认值
 ```php
 <?php
-$arr = ['foo' => 'val1'];
-$arr += [
+$source = ['foo' => 'val1'];
+$default = [
     'foo' => '',
     'bar' => 'val2'
 ];
+$source = $source + $default;
 /*
 $arr : ['foo' => 'val1', 'bar' => 'val2']
 */
