@@ -39,6 +39,10 @@ $default = [
 ];
 $source = $source + $default;
 /*
-$arr : ['foo' => 'val1', 'bar' => 'val2']
+$source var export : 
+[
+    "foo" => "val1",
+    "bar" => "val2",
+]
 */
 ```
