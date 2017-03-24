@@ -16,6 +16,9 @@ tmux
 #显示当前已有的会话列表
 tmux ls
 
+#attach指定session(先ls 再进入指定session)
+tmux a -t name-or-number
+
 #关闭一个session，按顺序
 tmux kill-session
 
