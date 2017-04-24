@@ -47,8 +47,8 @@ tmux kill-session -t name-or-number
 
 ### Window相关
 ```
-新建窗口                              prefix + c
-切换上一个活动窗口                    prefix + space
+新建窗口                              prefix + c
+列出窗口并选择                        prefix + w
 关闭当前窗口                          prefix + &
 切换到指定窗口                        prefix + (0-9)
 ```
