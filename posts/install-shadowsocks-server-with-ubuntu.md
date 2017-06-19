@@ -28,7 +28,14 @@ pip install shadowsocks
 相关说明，可以查看官网的文档
 
 ##启动
-确定一个日志文件位置，如`/root/log/shadow.log`，通过`nohup`启动程序，并将输出重定向到日志文件
+
+通过`nohup`启动程序，确定一个日志文件位置，如`/root/log/shadow.log`，将输出重定向到日志文件
 ```
 nohup ssserver -c /root/config/shdowsocks.json > /root/log/shadow.log &
 ```
+
+较新的shadowsocks可以指定以daemon方式运行
+```
+ssserver -c /path/to/config -d start
+```
+start可换成stop或restart，停止(重启)daemon
