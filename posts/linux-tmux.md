@@ -47,8 +47,8 @@ tmux kill-session -t name-or-number
 
 ### Window相关
 ```
-新建窗口                              prefix + c
-列出窗口并选择                        prefix + w
+新建窗口                              prefix + c
+列出窗口并选择                        prefix + w
 关闭当前窗口                          prefix + &
 切换到指定窗口                        prefix + (0-9)
 ```
@@ -60,7 +60,7 @@ tmux kill-session -t name-or-number
 水平拆分新窗格                        prefix + %
 查看所有窗口的号码                    prefix + q
 切换指定窗口                          prefix + q + (0-9)
-切换到下一个窗格                      prefix + o (字母 o 而不是数字 0)
-放大(恢复)窗格                        prefix + z
+切换到下一个窗格                      prefix + o (字母 o 而不是数字 0)
+放大(恢复)窗格                        prefix + z
 ```
 在对应窗格中执行`exit`可关闭此窗格。
