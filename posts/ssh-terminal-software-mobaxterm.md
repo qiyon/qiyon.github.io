@@ -1,18 +1,18 @@
-#SSH终端-MobaXterm
+# SSH终端-MobaXterm
 MobaXterm是一款比较好用的windows下使用的终端软件，提供免费版本。
 
 官网：[mobaxterm](http://mobaxterm.mobatek.net/)
 
 一下是以`v8.5`为参考的一些相关信息和设置
 
-##快捷键
+## 快捷键
 ```
 复制终端    Ctrl+Shift+U
 搜索session Ctrl+Shift+Q
 切换TAB     Ctrl+Alt+ 左或者右 箭头  (与一些显卡的切换横竖屏功能冲突，可以先禁用显卡设置)
 ```
 
-##一些设置
+## 一些设置
 ```
 开启/关闭 compact mode (简洁形式):    View --> compact mode
 设置Cursor：                         Setting --> Configuration --> Terminal --> Cursor
@@ -27,3 +27,9 @@ SSH设置：                            Setting --> Configuration --> SSH --> Se
 `PPs`:很多设置都要重启`MobaXterm`才能生效
 
 `PPPs`:终端下，进行中文输入时，退格键不太好用
+
+## lrssz传送文件
+从ssh远端获取文件
+`sz /path/to/file` 右键终端Receive file
+上传文件到ssh远端
+右键终端Send file，命令行中`rz`即获取文件
