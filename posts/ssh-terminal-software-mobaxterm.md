@@ -30,6 +30,9 @@ SSH设置：                            Setting --> Configuration --> SSH --> Se
 
 ## lrssz传送文件
 从ssh远端获取文件
+
 `sz /path/to/file` 右键终端Receive file
+
 上传文件到ssh远端
+
 右键终端Send file，命令行中`rz`即获取文件
