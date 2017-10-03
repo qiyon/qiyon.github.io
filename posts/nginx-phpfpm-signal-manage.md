@@ -6,7 +6,7 @@ Linux 下可以通过 kill 等命令向进程发送信号 signal ，进程接受
 
 命令行
 
-`kill -SIGINT <program id>`
+`kill -INT <program id>`
 
 进程 id 可以通过 `ps -ef` 或 `.pid` 文件等方式获得。
 
@@ -39,4 +39,6 @@ Linux 下可以通过 kill 等命令向进程发送信号 signal ，进程接受
 [Controlling nginx](http://nginx.org/en/docs/control.html)
 
 [PHP-FPM Signal Handling](https://forum.nginx.org/read.php?3,3485)
+
+linux 文档 `man nginx` 与 `man php-fpm`
 
