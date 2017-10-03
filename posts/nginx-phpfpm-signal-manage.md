@@ -2,7 +2,7 @@
 
 ## 说明
 
-Linux 下可以通过kill等命令向进程发送信号 signal ，进程接受到信号，可以执行对应的预定义的相关操作，从而实现退出、重启、重新加载配置文件等相关操作。
+Linux 下可以通过 kill 等命令向进程发送信号 signal ，进程接受到信号，可以执行对应的预定义的相关操作，从而实现退出、重启、重新加载配置文件等相关操作。
 
 命令行
 
@@ -33,3 +33,10 @@ Linux 下可以通过kill等命令向进程发送信号 signal ，进程接受�
 | `WINCH`    | graceful shutdown of worker processes    | 优雅得安全关闭 worker       |
 
 以上信号可作用于 nginx 的 master 进程，以及 `INT, TERM, QUIT, USR1, WINCH` 也可以对应作用于 worker 进程，进行相应管理。
+
+## 参考链接
+
+[Controlling nginx](http://nginx.org/en/docs/control.html)
+
+[PHP-FPM Signal Handling](https://forum.nginx.org/read.php?3,3485)
+
