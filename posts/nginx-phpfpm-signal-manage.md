@@ -6,9 +6,13 @@ Linux 下可以通过 kill 等命令向进程发送信号 signal ，进程接受
 
 命令行
 
-`kill -INT <program id>`
+`kill -s INT <process id>`
 
-进程 id 可以通过 `ps -ef` 或 `.pid` 文件等方式获得。
+或者
+
+`kill -SIGINT <process ID>`
+
+process id (进程ID)可以通过 `ps -ef` 或 `.pid` 文件等方式查找和获取。
 
 ## PHP-FPM
 
