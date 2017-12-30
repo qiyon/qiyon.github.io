@@ -64,3 +64,12 @@ tmux kill-session -t name-or-number
 放大(恢复)窗格                        prefix + z
 ```
 在对应窗格中执行`exit`可关闭此窗格。
+
+### 配置
+可以通过`~/.tmux.conf`对tmux进行一些配置，如实window和pane的序号从1开始(默认从0开始)：
+
+```
+# Start windows and panes at 1, not 0
+set -g base-index 1
+setw -g pane-base-index 1
+```
