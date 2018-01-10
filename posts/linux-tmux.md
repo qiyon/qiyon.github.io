@@ -73,3 +73,8 @@ tmux kill-session -t name-or-number
 set -g base-index 1
 setw -g pane-base-index 1
 ```
+
+默认状态栏在下方，可以通过以下配置将状态栏设置为在上方
+```
+set-option -g status-position top
+```
