@@ -1,4 +1,4 @@
-###Linux下PHP脚本可执行
+# Linux下PHP脚本可执行
 对于一个php脚本，在linux环境下，想要像一个可执行文件一样执行，如php的composr程序。需要在脚本的前方加shell注释。如下面一个php脚本：
 ```
 #!/usr/bin/env php

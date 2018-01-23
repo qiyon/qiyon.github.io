@@ -1,10 +1,10 @@
-#PHP的foreach和Iterator接口
-###介绍
+# PHP的foreach和Iterator接口
+## 介绍
 foreach可以遍历数组和对象，获取key和value值。
 
 对于数值array()的遍历，很好理解，参照[php.net](http://php.net/manual/zh/control-structures.foreach.php)。
 
-###foreach遍历对象
+## foreach遍历对象
 foreach遍历对象时，会将对象分为两类，一般的对象和继承Iterator接口的对象。
 
 对于一般的对象，foreach会遍历对象的可见属性，获取属性名和值作为key-value。外部foreach对象可获取public的属性，对象内部foreach $this，可以获取public、protected、private(继承的不获取)。详细的内容可以参照[php.net](http://php.net/manual/zh/language.oop5.iterations.php)。
@@ -14,7 +14,7 @@ foreach遍历对象时，会将对象分为两类，一般的对象和继承Iter
 foreach($iteratorClass as $key=>$value){
 }
 ```
-###Iterator接口
+## Iterator接口
 Iterator(迭代器的定义)
 ```php
  Iterator extends Traversable {

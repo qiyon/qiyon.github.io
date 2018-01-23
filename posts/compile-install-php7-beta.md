@@ -1,11 +1,11 @@
-#PHP7beta版编译安装笔记
+# PHP7beta版编译安装笔记
 
 安装环境以`centos6.6`为例，`Web`服务器采用`Nginx + PHP-FPM`的形式，以`php-src/`作为源代码文件夹。
 
 之前也做过一些这方面的笔记，但总的来说不是很完整。
 
 
-##依赖
+## 依赖
 - `autoconf` 用于生成自动配置程序
 - `gcc` 用于编译
 - `re2c` 一个基于c的正则表达解析器，用于php本身的词法分析
@@ -24,7 +24,7 @@ yum install autoconf gcc re2c bison libxml2 libxml2-devel openssl openssl-devel 
 ``` 
 
 
-##configure文件
+## configure文件
 通过`configure`文件进行编译配置，若`configure`文件不存在，通过`buildconf`程序生成。
 ```
 ./buildconf
@@ -89,7 +89,7 @@ yum install autoconf gcc re2c bison libxml2 libxml2-devel openssl openssl-devel 
 ```
 通过`configure`配置可以生一些编译需要的数据，以及替换一些路径信息；还会检测依赖，可以根据提示自己安装所依赖的库。
 
-##编译和安装
+## 编译和安装
 `configure`程序后，会生成相应的`Makefile`文件，此时可通过`make`命令编译`PHP`，编译所花的时间较长，请耐心等待：
 ```
 make
@@ -102,7 +102,7 @@ make clean
 ```
 make install 
 ```
-##配置
+## 配置
 安装好后，对于上面的编译安装配置，可以找到`PHP`的安装目录`/opt/php7`，有`PHP`的执行文件路径为`/opt/php7/bin/php`，可查看版本信息:
 ```
 [root@localhost ~]# /opt/php7/bin/php --version
@@ -136,7 +136,7 @@ Loaded Configuration File:         /opt/php7/lib/php.ini
 Scan for additional .ini files in: (none)
 Additional .ini files parsed:      (none)
 ```
-##php-fpm服务操作
+## php-fpm服务操作
 `php-fpm`是一个`PHP`的`fastcgi`管理和分发程序，运行时作为一个服务进程(`daemon`)运行，监听一个端口或者`unix socket`。
 
 使用`configure`程序生成编译配置项时，也会生成一个`php-fpm`的服务操作`shell`脚本，位置为`php-src/sapi/fpm/init.d.php-fpm`，可以将其拷贝出来，加上执行权限，如下：
@@ -175,7 +175,7 @@ kill -QUIT `cat /opt/php7/var/run/php-fpm.pid`
 ```
 `php-fpm`启动时还有一些别的参数设置，详情可以通过`/opt/php7/sbin/php-fpm --help`查看
 
-##开启opcache
+## 开启opcache
 `opcache`随着`PHP`已经编译，但默认的`php.ini`配置中并没有包含，开启`opcache`只需要在`php.ini`中添加：
 ```
 zend_extension=opcache.so

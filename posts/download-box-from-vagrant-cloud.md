@@ -1,7 +1,7 @@
-#从vagrantcloud.com下载box
-###vagrant默认
+# 从vagrantcloud.com下载box
+## vagrant默认
 可以通过vagrant命令行`vagrant box add <boxname>`可以获取对应的http地址
-###vagrantcloud
+## vagrantcloud
 vagrant的Box都可以在[vagrantcloud.com](http://vagrantcloud.com)上面可以找到，现在会跳转到这个网站[atlas.hashicorp.com/boxes/search](https://atlas.hashicorp.com/boxes/search)
 
 可以在那里搜索别人打包制作好的Box，
@@ -17,7 +17,7 @@ vagrant的Box都可以在[vagrantcloud.com](http://vagrantcloud.com)上面可以
 
 这样就可以直接在web端搜索并下载Box
 
-###示例
+## 示例
 如下载`ubuntu14.04`的64位版本，
 
 搜索找到主页[https://atlas.hashicorp.com/ubuntu/boxes/trusty64](https://atlas.hashicorp.com/ubuntu/boxes/trusty64)，

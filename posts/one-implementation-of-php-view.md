@@ -1,11 +1,11 @@
-#PHP视图层(View)实现
-###MVC
+# PHP视图层(View)实现
+## MVC
 MVC(Model,Controller,View)三个层次，几乎所有的PHP框架都是这种实现形式。
 - model负责具体的数据处理
 - controller负责数据验证和权限判断
 - view负责页面显示
 
-###render
+## render
 一个简单的render引擎，参考[Yii](http://www.yiiframework.com/)框架。
 
 其中比较关键的renderInternal()方法。其中有三个关键的函数，将view脚本中php的输出重定向到某个变量中，再返回。

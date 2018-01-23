@@ -1,4 +1,4 @@
-#nginx常用变量
+# nginx常用变量
 在nginx的配置文件中，常用到的变量，用于rewrit等。
 ```
 #对于一个请求 http://foo.com/path/to/bar.php?query=example

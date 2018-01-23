@@ -1,4 +1,4 @@
-#linux firefox flash
+# linux firefox flash
 从官网上下载tar.gz包。
 
 解压缩。

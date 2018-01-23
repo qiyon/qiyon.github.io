@@ -1,4 +1,4 @@
-#js实现保留指定html标签
+# js实现保留指定html标签
 
 php有类似的函数`strip_tag()`，相关说明 [php.net::strip_tag](https://secure.php.net/manual/zh/function.strip-tags.php)
 

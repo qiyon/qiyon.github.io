@@ -1,5 +1,5 @@
-#Laravel 4 Note
-###代码结构
+# Laravel 4 Note
+## 代码结构
 laravel/
 - app/
 	- commands
@@ -28,7 +28,7 @@ laravel/
 - vendor/
 - workbench/
 
-###执行流程
+## 执行流程
 1. 入口文件 laravel/public/index.php
 2. 加载Composer和框架文件 laravel/bootstrap/autoload.php 
     - laravel/vendor/autoload.php
@@ -41,7 +41,7 @@ laravel/
 7. 路由配置文件 laravel/app/routes.php
 8. Route --> Filter --> MVC 执行 
 
-###Route
+## Route
 路由，Laravel中所有的访问都需要在route中注册。
 
 基本路由：
@@ -83,7 +83,7 @@ Route::get('route/name',array('as'=>'rourename','uses'=>'controller@action'));
 //别名的使用，生成到该路由的url路径
 $url = URL::route('routename');
 ```
-###Controller
+## Controller
 Laravel的控制器，输出结果时，有Response、Redirect、View、字符串等，视图是一个对象，和Yii的输出流控制的视图实现不同。
 
 当控制器-方法有return时，视图输出return的值或者视图对象。若没有return值，视图采用Layout。
@@ -120,7 +120,7 @@ class DemoController extends  BaseController{
     }
 }
 ```
-###Filter
+## Filter
 过滤器filter一般定义在 /app/filters.php中。可以以如下的方式定义一个过滤器：
 ```php
 Route::filer('needlogin',function(){
@@ -130,7 +130,7 @@ Route::filer('needlogin',function(){
     }
 });
 ```
-###Input & Cookie & Session
+## Input & Cookie & Session
 请求的参数，统一用Input操作。get和post的数据均用Input::get()获取。
 ```php
 $name = Input::get('name');
@@ -158,7 +158,7 @@ $value = Session::get('key');
 $value = Session::get('key', 'default');
 $value = Session::get('key', function() { return 'default'; });  //回调函数
 ```
-###Responses & Redirect
+## Responses & Redirect
 除了简单的字符串和视图输出，Laravel还封装了许多响应以及重定向。
 
 一些Response：
@@ -191,7 +191,7 @@ Route::get('redirect',function(){
     return Redirect::action('UserController@profile', array('user' => 1));
 });
 ```
-###View & Layout
+## View & Layout
 视图和布局在Laravel中是等效的，在/app/view/目录下，以.php或者.blade.php后缀结尾。
 
 要使用laravel自带的模板引擎需用.blade.php结尾。
@@ -265,7 +265,7 @@ base_path();
 public_path();
 storage_path();
 ```
-###Database & ORM
+## Database & ORM
 数据库的定义在/app/config/database.php
 
 基本的sql使用：

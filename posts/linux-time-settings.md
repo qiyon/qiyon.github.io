@@ -1,6 +1,6 @@
-#Linux时间相关
+# Linux时间相关
 
-##设置时区
+## 设置时区
 ```
 cp /usr/share/zoneinfo/Asia/Chongqing /etc/localtime
 ```
@@ -8,7 +8,7 @@ cp /usr/share/zoneinfo/Asia/Chongqing /etc/localtime
 
 Ps：`Chongqing`,`Shanghai`均为北京时间。
 
-##同步网络时间
+## 同步网络时间
 `centos`为例，安装`ntp`(Network Time Protocol，网络时间协议)
 ```
 yum install ntp
@@ -23,7 +23,7 @@ ntpdate time.nist.gov
 - time.nist.gov  
 - ......
 
-##格式化输出当前时间
+## 格式化输出当前时间
 mysql的样式：
 ```
 date "+%Y-%m-%d %H:%M:%S"

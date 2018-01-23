@@ -1,4 +1,4 @@
-#scp note
+# scp note
 scp 可以在 2个 linux 主机间复制文件； 基于ssh协议
 
 从本地到远端：

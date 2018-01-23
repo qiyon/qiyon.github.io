@@ -1,9 +1,9 @@
-#Yii1之CComponent
+# Yii1之CComponent
 
-###CComponent介绍
+## CComponent介绍
 CComponent是整个Yii的基类，主要实现的是`事件 event (private $_e)`和`行为 behavior (private $_m)`的相关操作。
 
-###CComponent的事件处理
+## CComponent的事件处理
 Yii的CComponent通过以`on`开头的方法来定义一个时间，如`onSave()`，`onSubmit()`等，事件存储在`$_e（array的key=>val类型）`中，每个key为`事件id (如'onSave','onSubmit')`，val为`CList(事件包含handle的列表)`；每一个事件可以包含多个`句柄 hanlde`，一个`handle`即为一个可以调用的`函数或者方法`；事件的相关信息，如完成状态、参数，存储在一个`CEvent`类型的对象中。
 
 示例，一个`forbarComp`为例：
@@ -79,7 +79,7 @@ end:onSave()
 bool(true)
 ```
 
-###CComponent的行为处理
+## CComponent的行为处理
 行为`behavior`可以让`component`执行别的`behavior`类的方法，实现动态的加载某些方法，如对于下面的`behavior类`和`component类`：
 ```
 class bhClass implements IBehavior

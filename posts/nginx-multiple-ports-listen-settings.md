@@ -1,4 +1,4 @@
-#nginx多端口
+# nginx多端口
 `nginx.conf`文件：
 ```
 http {

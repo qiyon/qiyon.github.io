@@ -1,8 +1,8 @@
-#PHP打包为phar
-###简介
+# PHP打包为phar
+## 简介
 phar的作用类似与java的jar，可以将php代码打包成为一个文件，即phar文件。这个phar文件可以想php文件一样执行，别的php文件也可以用phar文件流的形式来调用其中的文件。
 
-###打包项目
+## 打包项目
 对于一个项目`pro`，其中包含文件如下：
 ```
 pro/proClass.php
@@ -19,7 +19,7 @@ $phar->buildFromDirectory(dirname(__FILE__) . '/pro/');
 运行`php createPhar.php`将会生成`pro.phar`文件。
 
 其中`new phar()`，第一个参数为生成phar的路径位置，第二个参数为文件访问方式，第三位参数为phar相关别名，用于`phar://`包含方式中的关键名。
-###使用phar
+## 使用phar
 在一般的php脚本中，直接包含phar文件，即：
 ```
 include 'pro.phar';
@@ -33,7 +33,7 @@ include 'phar://path/to/pro.phar/other.php';
 include 'phar://pro.phar/other.php';
 ```
 将会只包含`other.php`文件。
-###打包phar自执行文件
+## 打包phar自执行文件
 类似composer之类的phar文件，能够将文件移动到`/usr/local/bin`等目录，直接在shell中执行`composer`。这类phar有特殊的打包方法。
 
 同样有`pro`项目，如：

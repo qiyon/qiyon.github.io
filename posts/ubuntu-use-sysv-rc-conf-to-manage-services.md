@@ -1,5 +1,5 @@
-#ubuntu利用sysv-rc-conf设置服务启动
-###安装和使用
+# ubuntu利用sysv-rc-conf设置服务启动
+## 安装和使用
 安装：
 ```
 sudo apt-get install sysv-rc-conf
@@ -8,7 +8,7 @@ root权限使用：
 ```
 sudo sysv-rc-conf
 ```
-###说明
+## 说明
 每一列对应ubuntu的运行级别，如下：
 ```
 0   系统停机状态

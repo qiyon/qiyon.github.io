@@ -1,5 +1,5 @@
-#apt-get note
-###基本命令
+# apt-get note
+## 基本命令
 安装:
 ```
 apt-get install <package>
@@ -41,12 +41,12 @@ apt-get upgrade
 apt-get dist-upgrade
 ```
 
-###源文件位置
+## 源文件位置
 Ubuntu会根据源文件的配置去相应的镜像点下载软件。
 
 源文件包括`/etc/apt/sources.list`文件和`/etc/apt/sources.list.d`目录下的`.list`扩展名的文件。
 
-###PPA源
+## PPA源
 除了有官方源，还有个人源PPA（Personal Package Archives）。
 
 ppa源的地址：`https://launchpad.net/ubuntu/+ppas` ，在其中搜索到你需要的ppa源，例如`duggan/composer`,然后使用以下命令添加（或者删除已安装的）源。
@@ -62,5 +62,5 @@ add-apt-repository -r ppa:duggan/composer
 apt-get update
 ```
 
-###查看安装的软件aptitude
+## 查看安装的软件aptitude
 `aptitude`可以查看所有软件的安装信息

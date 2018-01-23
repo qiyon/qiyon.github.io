@@ -1,4 +1,4 @@
-###php-redis扩展安装
+# php-redis扩展安装
 获取phpredis扩展[地址](https://github.com/nicolasff/phpredis)。解压。这里假设php安装地址为/usr/local/php5/，则phpize应该在/usr/local/php5/bin/phpize。加下来，cd进入phpredis目录：
 ```
 /usr/local/php5/bin/phpize 

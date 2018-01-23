@@ -1,4 +1,4 @@
-###PHP 5.4 Web Server
+# PHP 5.4 Web Server
 PHP从5.4 开始有自带的Web服务器，仅用于帮助开发和测试。
 
 使用方法，cd到目录下，运行命令 -S ，指点端口号（localhost为本地访问，0.0.0.0:8080 为可远端访问）。如WebRoot目录为/var/www/html：

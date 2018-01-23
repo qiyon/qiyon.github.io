@@ -1,5 +1,5 @@
-#jQuery的Deferred对象
-###介绍
+# jQuery的Deferred对象
+## 介绍
 deferred对象用于封装一个执行过程，并定义它执行过后的回调函数。
 
 执行的结果分为：
@@ -11,7 +11,7 @@ deferred对象用于封装一个执行过程，并定义它执行过后的回调
 - 已失败时调用 `deferred.fail(function(){})`
 - 成功或失败都调用 `deferred.always(function(){})`
 
-###ajax与deferred
+## ajax与deferred
 jquery从1.5开始，`$.ajax()`返回的对象就已经是一个`deferred`对象了，如以下的代码：
 ```
 $.ajax({
@@ -52,7 +52,7 @@ $.when(ajaxNum1,ajaxNum2)
     });
 ```
 
-###自定义一个deferred对象
+## 自定义一个deferred对象
 可以自己定义一个deferred对象，代码如下：
 ```
     var wait = function(){
@@ -73,6 +73,6 @@ $.when(ajaxNum1,ajaxNum2)
         });
 ```
 
-###参考文章
+## 参考文章
 - [阮一峰的个人网站](http://www.ruanyifeng.com/)的一篇文章[jQuery的deferred对象详解](http://www.ruanyifeng.com/blog/2011/08/a_detailed_explanation_of_jquery_deferred_object.html)
 - jquery文档[Deferred object](http://api.jquery.com/category/deferred-object/)

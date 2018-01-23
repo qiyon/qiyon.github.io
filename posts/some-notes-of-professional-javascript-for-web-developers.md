@@ -1,4 +1,4 @@
-#JavaScript高级程序设计(第三版)
+# JavaScript高级程序设计(第三版)
 简单（基本）数据类型：
  - Undefined
  - Null
@@ -10,6 +10,7 @@
  - Object
 
 typeof。null会被认为是一个空的对象引用。
+
 ```js
 var myTestJson = {
     oneString : "test",
@@ -21,10 +22,12 @@ typeof(myTestJson.error);//"undefined"
 typeof(myTestJson.oneFunction);  //"function"
 typeof(myTestJson);//"object"
 ```
+
 转化为数字的函数 Number();
 
 for-in语句:
-```
+
+```js
 var myO = {
    var1 : "kankan",
    var2 : "zai kankan"
@@ -34,14 +37,16 @@ for(var inVar in myO){
    console.log(inVar);
 }
 ```
+
 函数function中的参数数组 arguments:
-```
+
+```js
 arguments[0] //第一个参数
 arguments[1] //第二个参数
 arguments.length  //参数个数
 ```
 获取对象属性：
-```
+```js
 var myO = {
     var1 : "the one ",
     var2 : "other one"
@@ -53,7 +58,7 @@ console.log(myO[keyStr]);
 //All output  "the one"
 ```
 属性define：
-```
+```js
 var book = {
     year :2004,
     edition :1
@@ -71,7 +76,7 @@ Object.defineProperty(book,"year",{
 });
 ```
 原型模式构造对象：
-```
+```js
 function Person(){
 }
 Person.prototype.name = "Nicholas";
@@ -96,7 +101,7 @@ alert(person1.name); //"Greg"——来自实例
 alert(person2.name); //"Nicholas"——来自原型
 ```
 组合使用构造函数模式和原型模式：
-```
+```js
 function Person(name, age, job){
     this.name = name;
     this.age = age;

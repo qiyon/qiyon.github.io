@@ -1,4 +1,4 @@
-#VIM7.4编译安装
+# VIM7.4编译安装
 官网下载 vim-7.4.tar.bz2，解压。
 ```shell
 tar -xvjf vim-7.4.tar.bz2

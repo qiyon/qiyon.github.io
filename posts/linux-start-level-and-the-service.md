@@ -1,6 +1,6 @@
-#Linux启动级别与服务
+# Linux启动级别与服务
 
-##1. Linux的启动级别种类
+## 1. Linux的启动级别种类
 如下：
 ```
 #   0 - halt (Do NOT set initdefault to this)
@@ -11,13 +11,13 @@
 #   5 - X11
 #   6 - reboot (Do NOT set initdefault to this)
 ```
-##2. 查看默认启动级别
+## 2. 查看默认启动级别
 ```
 cat /etc/inittab 
 ```
 最后有`id:3:initdefault:`，表明默认的启动级别是`3`，即多用户模式
 
-##3. 服务相关
+## 3. 服务相关
 Linux的服务位于`/etc/rc.d/init.d/`文件夹中，其中每个文件为一个脚本，包含`start`，`stop`等服务相关的操作。
 
 且有`/etc/init.d/`文件夹是链接指向`/etc/rc.d/init.d/`的，所以一般也说服务启动脚本的位置为`/etc/init.d/`文件夹。
@@ -43,7 +43,7 @@ service nginx stop
 
 而对于文件`/etc/rc6.d/K15nginx`,`/etc/rc6.d/K16php-fpm`，字母`K`表示关闭，即在关机模式时关闭`nginx`,`php-fpm`服务。
 
-##4. chkconfig设置与查看服务列表
+## 4. chkconfig设置与查看服务列表
 想要直观的查看和修改服务在不同运行级别下的情况可以通过`chkconfig`命令来查看。
 
 查看服务在不同级别下的关闭启动情况，`chkconfig`或者`chkconfig --list`命令，效果如下：
@@ -80,7 +80,7 @@ chkconfig nginx reset
 ```
 chkconfig --level 234 nginx off
 ```
-##5. 新的操作方式systemctl
+## 5. 新的操作方式systemctl
 以上运行级别和服务的查看、设置，对于`Centos7`，做了一些更改，统一为`systemctl`相关命令来操作。`systemctl`是`systemd`的服务管理程序，它融合 service 和 chkconfig 的功能于一体。
 
 相关的命令如下：

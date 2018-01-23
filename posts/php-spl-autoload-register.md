@@ -1,6 +1,7 @@
-#PHP之spl_autoload_register
+# PHP之spl_autoload_register
 将函数注册到SPL `__autoload`函数栈中，使用`new`创建对象时，若对象不存在，依次执行这些注册的SPL `__autoload`函数栈中的函数。
-###示例
+
+## 示例
 对于同一目录下的，以下三个文件：
 ```
 //File A.php
@@ -51,7 +52,8 @@ First
 Second 
 construct B
 ```
-###spl_autoload_register参数
+
+## spl_autoload_register参数
 对于`spl_autoload_register`函数的使用，有以下定义：
 ```
 bool spl_autoload_register ([ callback $autoload_function ] )

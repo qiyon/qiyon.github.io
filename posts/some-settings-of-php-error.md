@@ -1,4 +1,4 @@
-###PHP error设置
+# PHP error设置
 对于PHP在运行时是否报错误的设置，可以设置php.ini或者检测函数error_reporting()是否存在(详细查看[php.net](http://cn2.php.net/manual/zh/errorfunc.configuration.php))，设置报错的级别。在php.ini中：
 ```
 ; Default Value: E_ALL & ~E_NOTICE

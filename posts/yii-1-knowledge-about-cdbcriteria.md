@@ -1,4 +1,4 @@
-#Yii之CDbCriteria
+# Yii之CDbCriteria
 [Yii1.1类参考手册](http://www.yiichina.com/api/1.1/CDbCriteria)
 ```
 //建立

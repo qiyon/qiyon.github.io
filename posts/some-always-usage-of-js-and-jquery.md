@@ -1,5 +1,5 @@
-#Js & Jquery常用
-##Jquery
+# Js & Jquery常用
+## Jquery
 记录一些可能经常用到的jquery使用方法。
 ```
 //点击事件
@@ -58,7 +58,7 @@ var domHeight = $('#pre-id').height();
 //滚动到某个位置
 $('#pre-id').scrollTop(intValOfToPosition);
 ```
-##js
+## js
 js函数的参数`arguments`:
 ```
 function oneFunc(){

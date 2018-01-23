@@ -1,4 +1,4 @@
-###Yiic shell
+# Yiic shell
 Yii开发过程中，使用yiic可以快速创建module。
 
 假设 app/framework/yiic 为yiic的位置，app/index.php 和 app/protected/config/main.php 为入口文件和配置文件。

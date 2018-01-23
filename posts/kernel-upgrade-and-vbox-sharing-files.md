@@ -1,4 +1,4 @@
-#Kernel升级与VBox共享文件
+# Kernel升级与VBox共享文件
 
 对于Vbox虚拟机的Linux系统，升级Kernel，可能导致其共享文件功能无法使用。以`centos`为例，解决方法如下：
 

@@ -1,6 +1,6 @@
-#ubuntu之nginx搭配php-fpm
+# ubuntu之nginx搭配php-fpm
 采用ubuntu14.04的官方源，搭建nginx和php-fpm的Web环境。
-###安装
+## 安装
 安装php和php-fpm：
 ```
 sudo apt-get install php5-cli php5-fpm
@@ -13,7 +13,7 @@ sudo apt-get install php5-redis php5-mcrypt php5-gd  php5-mysqlnd
 ```
 sudo apt-get install nginx
 ```
-###配置
+## 配置
 这里安装的php-fpm默认采用`unix:/var/run/php5-fpm.sock`,配置nginx即可。
 
 配置`/etc/nginx/sites-enabled/default`文件，修改配置至如下的形式(`#`开头为注释)：
@@ -49,7 +49,7 @@ fastcgi_param  SCRIPT_FILENAME         $request_filename;
 ```
 
 更过nginx的配置方式，自行学习。
-###相关操作和配置文件位置
+## 相关操作和配置文件位置
 打开、关闭、重启、查看nginx和php-fpm服务：
 ```
 sudo service nginx start
