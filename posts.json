@@ -1,5 +1,11 @@
 [
   {
+    "id": "php-foreach-reference-case",
+    "title": "PHP的foreach的一个case",
+    "time": "2018-02-03 17:57:00",
+    "tag": "php,foreach,reference"
+  },
+  {
     "id": "nginx-phpfpm-signal-manage",
     "title": "Nginx与PHP-FPM的信号管理",
     "time": "2017-10-04 01:28:00",
