@@ -7,9 +7,11 @@ $arr = ['a', 'b', 'c'];
 foreach ($arr as &$item) {
     echo $item . ',';
 }
+//output: a,b,c,
 foreach ($arr as $item) {
     echo $item . ',';
 }
+//output: a,b,b,
 ```
 
 ## explain 
