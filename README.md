@@ -1,4 +1,5 @@
 # Personal website
-My personal website, powered by `React`, `Material-UI`.
+
+He.Qiyong personal website.
 
 [www.heqiyong.com](http://www.heqiyong.com)
