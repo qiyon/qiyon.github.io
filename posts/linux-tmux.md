@@ -78,3 +78,8 @@ setw -g pane-base-index 1
 ```
 set-option -g status-position top
 ```
+
+关闭自动命名，会固定为进程名称
+```
+set-option -g allow-rename off 
+```
