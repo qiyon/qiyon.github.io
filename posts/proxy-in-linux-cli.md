@@ -61,3 +61,16 @@ The document has moved
 </BODY></HTML>
 
 ```
+
+## 环境变量实现代码
+
+在MacOS下，proxychains可能无法使用，这种情况可以通过设置环境变量来实现，在`.bashrc`或`.zshrc`中添加如下alias
+
+```
+alias pxon="export http_proxy=http://127.0.0.1:10807; export https_proxy=http://127.0.0.1:10807; echo 'HTTP Proxy on';"
+alias pxoff="unset http_proxy; unset https_proxy; echo 'HTTP Proxy off';"
+```
+
+对应替换成自己本地的代理设置后。
+
+即可使用`pxon`和`pxoff`手动开启和关闭终端中的代理。
