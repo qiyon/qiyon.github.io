@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: "何其勇的个人网站",
-  shortName: "He Qiyong",
+  name: "HeQiyong 的个人网站",
+  shortName: "HeQiyong",
   description: "关于 Web 开发、PHP、Linux 与工程实践的个人技术笔记。",
   url: "https://www.heqiyong.com",
   locale: "zh-CN",
-  author: "何其勇",
+  author: "HeQiyong",
   github: {
     repository: "https://github.com/qiyon/qiyon.github.io",
     branch: "master",

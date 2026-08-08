@@ -17,7 +17,7 @@ const searchValue = `${post.id} ${post.data.title} ${post.data.tags.join(" ")}`;
   data-tags={JSON.stringify(post.data.tags)}
 >
   <div class="post-card-main">
-    <h3><a href={`/post/${post.id}/`}>{post.data.title}</a></h3>
+    <h3><a href={`/post/${post.id}`}>{post.data.title}</a></h3>
     <time datetime={post.data.publishedAt.toISOString()}>{formatPostDate(post.data.publishedAt)}</time>
   </div>
   <div class="post-tags" aria-label="文章标签">

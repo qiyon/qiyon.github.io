@@ -5,7 +5,7 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://www.heqiyong.com",
   output: "static",
-  trailingSlash: "always",
+  trailingSlash: "ignore",
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

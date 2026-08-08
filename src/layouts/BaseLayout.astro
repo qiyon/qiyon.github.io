@@ -17,7 +17,10 @@ const {
   publishedAt,
 } = Astro.props;
 const pageTitle = title ? `${title} | ${siteConfig.shortName}` : siteConfig.name;
-const canonical = new URL(Astro.url.pathname, Astro.site ?? siteConfig.url).toString();
+const canonical =
+  Astro.url.pathname === "/"
+    ? siteConfig.url
+    : new URL(Astro.url.pathname, Astro.site ?? siteConfig.url).toString();
 const structuredData = {
   "@context": "https://schema.org",
   "@type": type === "article" ? "BlogPosting" : "WebSite",
