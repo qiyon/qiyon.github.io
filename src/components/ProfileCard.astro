@@ -1,0 +1,40 @@
+---
+interface Props {
+  postCount: number;
+  tagCount: number;
+  latestYear: number;
+}
+
+const { postCount, tagCount, latestYear } = Astro.props;
+---
+
+<section class="profile-card bento-card" aria-labelledby="profile-title">
+  <p class="eyebrow">PERSONAL NOTES</p>
+  <h1 id="profile-title">把问题写清楚，<br />也把答案留下来。</h1>
+  <p>
+    这里记录 Web 开发、PHP、Linux 与日常工程实践。文章保持静态、开放，并尽量让旧链接继续可用。
+  </p>
+  <div class="profile-actions">
+    <a class="button button-primary" href="#articles">浏览文章</a>
+    <a class="button button-secondary" href="/about/">了解本站</a>
+  </div>
+</section>
+
+<aside class="stats-card bento-card" aria-label="站点统计">
+  <p class="eyebrow">ARCHIVE</p>
+  <dl class="stats-grid">
+    <div>
+      <dt>文章</dt>
+      <dd>{postCount}</dd>
+    </div>
+    <div>
+      <dt>标签</dt>
+      <dd>{tagCount}</dd>
+    </div>
+    <div>
+      <dt>更新至</dt>
+      <dd>{latestYear}</dd>
+    </div>
+  </dl>
+  <p class="stats-note">全部正文在构建时生成 HTML，阅读无需客户端请求 Markdown。</p>
+</aside>

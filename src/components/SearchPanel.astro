@@ -1,0 +1,49 @@
+---
+interface TagSummary {
+  name: string;
+  count: number;
+}
+
+interface Props {
+  tags: TagSummary[];
+  postCount: number;
+}
+
+const { tags, postCount } = Astro.props;
+---
+
+<section class="search-panel" aria-labelledby="search-title">
+  <div class="search-heading">
+    <div>
+      <p class="eyebrow">FIND A NOTE</p>
+      <h2 id="search-title">搜索文章</h2>
+    </div>
+    <p data-result-status aria-live="polite">显示 {postCount} / {postCount} 篇文章</p>
+  </div>
+  <div class="search-field">
+    <label for="post-search">标题、文章 ID 或标签</label>
+    <input
+      id="post-search"
+      type="search"
+      inputmode="search"
+      placeholder="例如：php、linux、stream"
+      autocomplete="off"
+      data-post-search
+    />
+  </div>
+  <div class="tag-filter" aria-label="按标签筛选">
+    <button type="button" data-filter-tag="" data-selected="true" aria-pressed="true">全部</button>
+    {
+      tags.map((tag) => (
+        <button type="button" data-filter-tag={tag.name} data-selected="false" aria-pressed="false">
+          {tag.name} <span>{tag.count}</span>
+        </button>
+      ))
+    }
+  </div>
+  <button class="clear-filter" type="button" data-clear-filters hidden>清除筛选</button>
+</section>
+
+<script>
+  import "../scripts/post-filter";
+</script>

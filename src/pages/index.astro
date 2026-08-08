@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+import PostList from "../components/PostList.astro";
+import ProfileCard from "../components/ProfileCard.astro";
+import SearchPanel from "../components/SearchPanel.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const posts = (await getCollection("posts", ({ data }) => !data.draft)).sort(
+  (left, right) => right.data.publishedAt.valueOf() - left.data.publishedAt.valueOf(),
+);
+const tagCounts = new Map<string, number>();
+for (const post of posts) {
+  for (const tag of post.data.tags) tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
+}
+const tags = [...tagCounts]
+  .map(([name, count]) => ({ name, count }))
+  .sort((left, right) => right.count - left.count || left.name.localeCompare(right.name, "zh-CN"))
+  .slice(0, 16);
+const latestYear = posts[0]?.data.publishedAt.getFullYear() ?? new Date().getFullYear();
+---
+
+<BaseLayout>
+  <div class="page-shell home-page">
+    <div class="bento-grid">
+      <ProfileCard postCount={posts.length} tagCount={tagCounts.size} latestYear={latestYear} />
+    </div>
+    <SearchPanel tags={tags} postCount={posts.length} />
+    <PostList posts={posts} />
+  </div>
+</BaseLayout>

@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { formatPostDate } from "../config";
+
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+const searchValue = `${post.id} ${post.data.title} ${post.data.tags.join(" ")}`;
+---
+
+<article
+  class="post-card"
+  data-post-item
+  data-search={searchValue}
+  data-tags={JSON.stringify(post.data.tags)}
+>
+  <div class="post-card-main">
+    <h3><a href={`/post/${post.id}/`}>{post.data.title}</a></h3>
+    <time datetime={post.data.publishedAt.toISOString()}>{formatPostDate(post.data.publishedAt)}</time>
+  </div>
+  <div class="post-tags" aria-label="文章标签">
+    {
+      post.data.tags.map((tag) => (
+        <a href={`/?tag=${encodeURIComponent(tag)}`} rel="tag">
+          #{tag}
+        </a>
+      ))
+    }
+  </div>
+</article>

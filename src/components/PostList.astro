@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from "astro:content";
+import PostCard from "./PostCard.astro";
+
+interface Props {
+  posts: CollectionEntry<"posts">[];
+}
+
+const { posts } = Astro.props;
+---
+
+<section id="articles" class="post-list" aria-labelledby="articles-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">ALL POSTS</p>
+      <h2 id="articles-title">全部文章</h2>
+    </div>
+    <span>{posts.length} 篇</span>
+  </div>
+  <div class="post-list-items">
+    {posts.map((post) => <PostCard post={post} />)}
+  </div>
+  <div class="empty-state" data-empty-state hidden>
+    <h3>没有匹配的文章</h3>
+    <p>试试缩短关键词，或选择其他标签。</p>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Prose from "../components/Prose.astro";
+import { formatPostDate, postSourceUrl } from "../config";
+
+interface Props {
+  id: string;
+  title: string;
+  publishedAt: Date;
+  tags: string[];
+  description?: string;
+}
+
+const { id, title, publishedAt, tags, description } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} type="article" publishedAt={publishedAt}>
+  <article class="post-page">
+    <header class="post-header">
+      <a class="back-link" href="/#articles">← 返回文章列表</a>
+      <h1>{title}</h1>
+      <div class="post-meta">
+        <time datetime={publishedAt.toISOString()}>{formatPostDate(publishedAt)}</time>
+        <span aria-hidden="true">·</span>
+        <span>{tags.length} 个标签</span>
+      </div>
+      <div class="post-tags post-header-tags">
+        {tags.map((tag) => <a href={`/?tag=${encodeURIComponent(tag)}`} rel="tag">#{tag}</a>)}
+      </div>
+      <div class="source-actions">
+        <a class="button button-secondary" href={postSourceUrl(id, "blob")}>在 GitHub 查看</a>
+        <a class="button button-secondary" href={postSourceUrl(id, "edit")}>在 GitHub 编辑</a>
+      </div>
+    </header>
+    <Prose>
+      <slot />
+    </Prose>
+  </article>
+</BaseLayout>
