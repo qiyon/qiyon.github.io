@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="页面未找到" description="请求的页面不存在。">
+  <div class="page-shell error-page">
+    <p class="error-code">404</p>
+    <h1>这里没有这个页面</h1>
+    <p>地址可能已更改，或者输入有误。你可以返回首页继续查找文章。</p>
+    <a class="button button-primary" href="/">返回首页</a>
+  </div>
+  <script is:inline>
+    (() => {
+      const match = window.location.pathname.match(/^\/home(?:\/(.*?))?\/?$/);
+      if (!match) return;
+      const target = new URL("/", window.location.origin);
+      if (match[1]) {
+        try {
+          target.searchParams.set("q", decodeURIComponent(match[1]));
+        } catch {
+          target.searchParams.set("q", match[1]);
+        }
+      }
+      window.location.replace(target.toString());
+    })();
+  </script>
+</BaseLayout>

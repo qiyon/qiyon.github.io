@@ -1,0 +1,22 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+
+const pathname = Astro.url.pathname;
+const isHome = pathname === "/";
+const isAbout = pathname.startsWith("/about");
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="HeQiyong 的个人网站首页">
+      <span class="brand-mark" aria-hidden="true">H</span>
+      <span>HeQiyong</span>
+    </a>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="/" aria-current={isHome ? "page" : undefined}>文章</a>
+      <a href="/about/" aria-current={isAbout ? "page" : undefined}>关于</a>
+      <a href="/rss.xml">RSS</a>
+    </nav>
+    <ThemeToggle />
+  </div>
+</header>
