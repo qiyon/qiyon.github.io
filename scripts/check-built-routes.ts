@@ -16,6 +16,15 @@ async function isFile(path: string) {
   }
 }
 
+async function exists(path: string) {
+  try {
+    await stat(path);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 for (const route of [
   "index.html",
   "about/index.html",
@@ -50,18 +59,10 @@ for (const id of postIds) {
   assert(!html.includes("/js/app.js"), `/post/${id}/ 仍引用旧客户端包`);
 }
 
-const compatibilityFiles = (await readdir(join(DIST_DIRECTORY, "posts"))).filter((file) =>
-  file.endsWith(".md"),
-);
-assert(
-  compatibilityFiles.length === EXPECTED_POST_COUNT,
-  `兼容 Markdown 应为 ${EXPECTED_POST_COUNT} 个，实际为 ${compatibilityFiles.length} 个`,
-);
+assert(!(await exists(join(DIST_DIRECTORY, "posts"))), "不应生成旧 /posts/*.md 兼容路由");
 
 const home = await readFile(join(DIST_DIRECTORY, "index.html"), "utf8");
 assert(!home.includes("posts.json"), "首页仍引用 posts.json");
 assert(!home.includes("/js/app.js"), "首页仍引用旧客户端包");
 
-console.log(
-  `路由验证通过：${postIds.length} 个文章页面和 ${compatibilityFiles.length} 个兼容 Markdown。`,
-);
+console.log(`路由验证通过：${postIds.length} 个文章页面，未生成旧 Markdown 兼容路由。`);
