@@ -14,7 +14,8 @@
     "format": "biome format --write .",
     "validate:content": "bun run scripts/validate-content.ts",
     "validate:routes": "bun run scripts/check-built-routes.ts",
-    "check": "bun run astro:check && bun run lint && bun run validate:content",
+    "test": "bun test",
+    "check": "bun run astro:check && bun run lint && bun run validate:content && bun run test",
     "verify": "bun run check && bun run build && bun run validate:routes"
   },
   "dependencies": {},
@@ -25,6 +26,7 @@
     "@biomejs/biome": "2.5.7",
     "@tailwindcss/typography": "0.5.20",
     "@tailwindcss/vite": "4.3.3",
+    "@types/bun": "^1.3.14",
     "astro": "7.2.0",
     "tailwindcss": "4.3.3",
     "typescript": "5.9.3",

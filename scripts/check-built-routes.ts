@@ -34,6 +34,10 @@ for (const route of [
   "CNAME",
   "favicon.ico",
   "robots.txt",
+  "tool/index.html",
+  "tool/json/index.html",
+  "tool/unixtimestamp/index.html",
+  "tool/logview/index.html",
 ]) {
   assert(await isFile(join(DIST_DIRECTORY, route)), `缺少构建产物：${route}`);
 }
@@ -64,5 +68,11 @@ assert(!(await exists(join(DIST_DIRECTORY, "posts"))), "不应生成旧 /posts/*
 const home = await readFile(join(DIST_DIRECTORY, "index.html"), "utf8");
 assert(!home.includes("posts.json"), "首页仍引用 posts.json");
 assert(!home.includes("/js/app.js"), "首页仍引用旧客户端包");
+
+for (const route of ["tool/json", "tool/unixtimestamp", "tool/logview"]) {
+  const html = await readFile(join(DIST_DIRECTORY, route, "index.html"), "utf8");
+  assert(!html.includes("posts.json"), `/${route}/ 仍引用 posts.json`);
+  assert(!html.includes("/js/app.js"), `/${route}/ 仍引用旧客户端包`);
+}
 
 console.log(`路由验证通过：${postIds.length} 个文章页面，未生成旧 Markdown 兼容路由。`);

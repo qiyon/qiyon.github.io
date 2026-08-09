@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const resultRows = [
+  { key: "unix-seconds", label: "Unix 秒" },
+  { key: "unix-millis", label: "Unix 毫秒" },
+  { key: "beijing", label: "北京时间" },
+  { key: "beijing-compact", label: "北京时间（紧凑）" },
+  { key: "iso", label: "ISO 8601" },
+  { key: "utc", label: "UTC 时间" },
+  { key: "weekday", label: "星期" },
+];
+---
+
+<BaseLayout
+  title="Unix 时间戳"
+  description="自动识别 Unix 秒、毫秒、日期时间与时间，统一按北京时间（UTC+8）换算展示，纯前端本地处理。"
+>
+  <div class="page-shell tool-page">
+    <header class="page-header">
+      <p class="eyebrow">TOOL / UNIX TIMESTAMP</p>
+      <h1>Unix 时间戳</h1>
+      <p>
+        支持 Unix 秒 / 毫秒、日期时间（2026-01-01 13:55:01）、日期（20260101）、时间（13、13:55、13:55:01）。
+        全部按北京时间（UTC+8）解释与展示。
+      </p>
+    </header>
+
+    <section class="tool-panel tool-now" aria-label="当前时间">
+      <div class="tool-now-grid">
+        <div>
+          <span class="tool-now-label">Unix 秒</span>
+          <code data-now-seconds>—</code>
+        </div>
+        <div>
+          <span class="tool-now-label">Unix 毫秒</span>
+          <code data-now-millis>—</code>
+        </div>
+        <div>
+          <span class="tool-now-label">北京时间</span>
+          <code data-now-beijing>—</code>
+        </div>
+      </div>
+      <button class="button button-secondary" type="button" data-now-fill>填入当前时间</button>
+    </section>
+
+    <section class="tool-panel" aria-labelledby="time-input-label">
+      <div class="tool-field">
+        <label id="time-input-label" for="time-input">输入时间戳或日期时间</label>
+        <input
+          id="time-input"
+          class="tool-input"
+          type="text"
+          inputmode="text"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="1783411200 / 2026-07-07 16:00:00 / 13:55"
+          data-time-input
+        />
+      </div>
+
+      <div class="tool-actions">
+        <button class="button button-primary" type="button" data-time-parse>解析</button>
+      </div>
+
+      <p class="tool-status" role="status" aria-live="polite" data-time-status hidden></p>
+
+      <div class="tool-result" data-time-result hidden>
+        <p class="tool-result-kind">识别类型：<strong data-time-kind>—</strong></p>
+        <dl class="tool-result-list">
+          {
+            resultRows.map((row) => (
+              <div class="tool-result-row">
+                <dt>{row.label}</dt>
+                <dd>
+                  <code data-result={row.key}>—</code>
+                  <button class="tool-copy" type="button" data-copy={row.key} hidden>
+                    复制
+                  </button>
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </section>
+
+    <p class="tool-back"><a href="/tool/">← 返回工具列表</a></p>
+  </div>
+
+  <script>
+    import "../../scripts/tools/time-page";
+  </script>
+</BaseLayout>
