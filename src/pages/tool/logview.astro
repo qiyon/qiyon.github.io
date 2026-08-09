@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="日志格式化查看"
+  description="自动处理被引号包裹转义的日志字符串与 JSON 数据，识别日志级别并友好展示，纯前端本地处理。"
+>
+  <div class="page-shell tool-page">
+    <header class="page-header">
+      <p class="eyebrow">TOOL / LOG VIEW</p>
+      <h1>日志格式化查看</h1>
+      <p>
+        粘贴日志文本、被引号包裹转义的字符串、JSON 或被转义的 JSON，自动解转义、识别级别并提取行内
+        JSON。全部计算在浏览器本地完成。
+      </p>
+    </header>
+
+    <section class="tool-panel" aria-labelledby="log-input-label">
+      <div class="tool-field">
+        <label id="log-input-label" for="log-input">输入日志</label>
+        <textarea
+          id="log-input"
+          class="tool-textarea"
+          rows="10"
+          spellcheck="false"
+          placeholder={'2026-07-07 16:00:00 INFO receive {"code": 0}\n2026-07-07 16:00:01 ERROR request failed'}
+          data-log-input></textarea>
+      </div>
+
+      <div class="tool-actions">
+        <button class="button button-primary" type="button" data-log-parse>解析日志</button>
+        <button class="button button-secondary" type="button" data-log-copy>复制解析结果</button>
+        <button class="button button-secondary" type="button" data-log-clear>清空</button>
+      </div>
+
+      <p class="tool-status" role="status" aria-live="polite" data-log-status hidden></p>
+
+      <div class="tool-field" data-log-json-view hidden>
+        <span class="tool-field-label" id="log-json-label">JSON 视图</span>
+        <pre class="tool-output" aria-labelledby="log-json-label"><code data-log-json-output></code></pre>
+      </div>
+
+      <div class="tool-field" data-log-lines-view hidden>
+        <span class="tool-field-label">日志行</span>
+        <ol class="log-lines" data-log-lines></ol>
+      </div>
+    </section>
+
+    <p class="tool-back"><a href="/tool">← 返回工具列表</a></p>
+  </div>
+
+  <script>
+    import "../../scripts/tools/log-page";
+  </script>
+</BaseLayout>

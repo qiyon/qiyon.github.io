@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="JSON 格式化"
+  description="JSON 美化、压缩、添加与去除斜杠转义，支持 2/4 空格缩进与紧凑数组单行显示，纯前端本地处理。"
+>
+  <div class="page-shell tool-page">
+    <header class="page-header">
+      <p class="eyebrow">TOOL / JSON</p>
+      <h1>JSON 格式化</h1>
+      <p>粘贴 JSON 或被引号包裹转义的 JSON 字符串，自动识别并处理。全部计算在浏览器本地完成。</p>
+    </header>
+
+    <section class="tool-panel" aria-labelledby="json-input-label">
+      <div class="tool-field">
+        <label id="json-input-label" for="json-input">输入</label>
+        <textarea
+          id="json-input"
+          class="tool-textarea"
+          rows="10"
+          spellcheck="false"
+          placeholder='{"name": "demo", "ports": [80, 443]}'
+          data-json-input></textarea>
+      </div>
+
+      <div class="tool-options">
+        <fieldset class="tool-option-group">
+          <legend>美化缩进</legend>
+          <label><input type="radio" name="json-indent" value="2" checked /> 2 空格</label>
+          <label><input type="radio" name="json-indent" value="4" /> 4 空格</label>
+        </fieldset>
+        <fieldset class="tool-option-group">
+          <legend>数组</legend>
+          <label>
+            <input type="checkbox" data-json-compact checked /> 紧凑（数字、字符串数组单行显示）
+          </label>
+        </fieldset>
+      </div>
+
+      <div class="tool-actions">
+        <button class="button button-primary" type="button" data-json-format>美化</button>
+        <button class="button button-secondary" type="button" data-json-minify>压缩</button>
+        <button class="button button-secondary" type="button" data-json-escape>添加转义</button>
+        <button class="button button-secondary" type="button" data-json-unescape>去除转义</button>
+        <button class="button button-secondary" type="button" data-json-copy>复制结果</button>
+        <button class="button button-secondary" type="button" data-json-clear>清空</button>
+      </div>
+
+      <p class="tool-status" role="status" aria-live="polite" data-json-status hidden></p>
+
+      <div class="tool-field">
+        <span class="tool-field-label" id="json-output-label">输出</span>
+        <pre class="tool-output" aria-labelledby="json-output-label"><code data-json-output></code></pre>
+      </div>
+    </section>
+
+    <p class="tool-back"><a href="/tool">← 返回工具列表</a></p>
+  </div>
+
+  <script>
+    import "../../scripts/tools/json-page";
+  </script>
+</BaseLayout>
