@@ -1015,7 +1015,6 @@ select {
   border-radius: 0.95rem;
   background: var(--surface-strong);
   list-style: none;
-  counter-reset: log-line;
 }
 
 .log-line {
@@ -1028,17 +1027,15 @@ select {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
   font-size: 0.82rem;
   line-height: 1.6;
-  counter-increment: log-line;
 }
 
 .log-line:last-child {
   border-bottom: 0;
 }
 
-.log-line::before {
-  content: counter(log-line);
+.log-line-number {
   flex-shrink: 0;
-  min-width: 2.5em;
+  min-width: 3.5em;
   color: var(--text-muted);
   font-size: 0.72rem;
   text-align: right;
@@ -1053,6 +1050,7 @@ select {
 .log-text {
   min-width: 0;
   overflow-wrap: anywhere;
+  white-space: pre-wrap;
 }
 
 .log-badge {
@@ -1104,6 +1102,15 @@ select {
   cursor: pointer;
 }
 
+.log-json > summary {
+  padding: 0.12rem 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+  border-radius: 999px;
+  color: var(--accent-strong);
+  background: var(--accent-soft);
+  font-weight: 700;
+}
+
 .log-json pre {
   margin: 0.4rem 0 0.2rem;
   padding: 0.6rem 0.8rem;
@@ -1113,6 +1120,31 @@ select {
   background: var(--bg);
   font-size: 0.8rem;
   line-height: 1.55;
+}
+
+.log-json-note {
+  margin: 0.45rem 0 0;
+  color: var(--text-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.74rem;
+  overflow-wrap: anywhere;
+}
+
+.log-original {
+  margin-top: 0.5rem;
+}
+
+.log-original summary {
+  display: inline-flex;
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  cursor: pointer;
+}
+
+.log-original .tool-output,
+.log-original pre {
+  margin-top: 0.45rem;
+  background: color-mix(in srgb, var(--surface-strong) 80%, var(--bg));
 }
 
 @media (max-width: 48rem) {

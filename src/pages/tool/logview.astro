@@ -4,15 +4,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="日志格式化查看"
-  description="自动处理被引号包裹转义的日志字符串与 JSON 数据，识别日志级别并友好展示，纯前端本地处理。"
+  description="提取日志中的复杂 JSON，递归展开 JSON 字符串字段，识别日志级别并友好展示，纯前端本地处理。"
 >
   <div class="page-shell tool-page">
     <header class="page-header">
       <p class="eyebrow">TOOL / LOG VIEW</p>
       <h1>日志格式化查看</h1>
       <p>
-        粘贴日志文本、被引号包裹转义的字符串、JSON 或被转义的 JSON，自动解转义、识别级别并提取行内
-        JSON。全部计算在浏览器本地完成。
+        粘贴业务日志、跨行 JSON 或被转义的 JSON，自动保留业务上下文、识别级别，并递归展开 JSON
+        字符串字段。原始编码始终可核对，全部计算在浏览器本地完成。
       </p>
     </header>
 
@@ -24,13 +24,24 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           class="tool-textarea"
           rows="10"
           spellcheck="false"
-          placeholder={'2026-07-07 16:00:00 INFO receive {"code": 0}\n2026-07-07 16:00:01 ERROR request failed'}
+          placeholder={'2026-08-12 10:00:00 INFO xx biz info, data:{"code":0,"payload":"{\\"orderId\\":123,\\"items\\":[1,2]}"}'}
           data-log-input></textarea>
+      </div>
+
+      <div class="tool-options">
+        <fieldset class="tool-option-group">
+          <legend>JSON 展示</legend>
+          <label>
+            <input type="checkbox" data-log-decode checked /> 递归展开 JSON 字符串字段
+          </label>
+        </fieldset>
       </div>
 
       <div class="tool-actions">
         <button class="button button-primary" type="button" data-log-parse>解析日志</button>
-        <button class="button button-secondary" type="button" data-log-copy>复制解析结果</button>
+        <button class="button button-secondary" type="button" data-log-expand>展开全部 JSON</button>
+        <button class="button button-secondary" type="button" data-log-collapse>折叠全部 JSON</button>
+        <button class="button button-secondary" type="button" data-log-copy>复制原始日志</button>
         <button class="button button-secondary" type="button" data-log-clear>清空</button>
       </div>
 
@@ -38,7 +49,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
       <div class="tool-field" data-log-json-view hidden>
         <span class="tool-field-label" id="log-json-label">JSON 视图</span>
+        <p class="log-json-note" data-log-json-note hidden></p>
         <pre class="tool-output" aria-labelledby="log-json-label"><code data-log-json-output></code></pre>
+        <details class="log-original" data-log-json-original-view hidden>
+          <summary>查看原始编码</summary>
+          <pre class="tool-output"><code data-log-json-original-output></code></pre>
+        </details>
       </div>
 
       <div class="tool-field" data-log-lines-view hidden>
