@@ -15,8 +15,8 @@ const isTool = pathname.startsWith("/tool");
     </a>
     <nav class="main-nav" aria-label="主导航">
       <a href="/" aria-current={isHome ? "page" : undefined}>文章</a>
-      <a href="/about" aria-current={isAbout ? "page" : undefined}>关于</a>
       <a href="/tool" aria-current={isTool ? "page" : undefined}>工具</a>
+      <a href="/about" aria-current={isAbout ? "page" : undefined}>关于</a>
       <a href="/rss.xml">RSS</a>
     </nav>
     <ThemeToggle />

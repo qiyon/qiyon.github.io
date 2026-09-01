@@ -490,11 +490,14 @@ select {
   color: var(--text-muted);
 }
 
-.narrow-page,
 .post-page {
   width: min(100% - 2rem, 52rem);
   margin-inline: auto;
   padding-block: 3.5rem 5rem;
+}
+
+.about-page {
+  padding-block: 3rem 5rem;
 }
 
 .page-header,

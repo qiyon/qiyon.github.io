@@ -4,17 +4,25 @@ import { siteConfig } from "../config";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="关于" description="关于 HeQiyong 和这个个人技术网站。">
-  <div class="page-shell narrow-page">
+<BaseLayout
+  title="关于"
+  description="关于 HeQiyong 和这个记录软件工程经验笔记与便捷开发工具，侧重 Web、后端、Linux 的个人技术网站。"
+>
+  <div class="page-shell about-page">
     <header class="page-header">
       <p class="eyebrow">ABOUT</p>
       <h1>关于本站</h1>
-      <p>一个长期保存技术笔记，也持续整理旧知识的个人网站。</p>
+      <p>一个记录软件工程经验、整理技术笔记，并持续打磨便捷开发工具的个人网站。</p>
     </header>
     <Prose>
-      <h2>内容</h2>
+      <h2>内容与工具</h2>
       <p>
-        本站主要记录 Web 开发、PHP、Linux、数据库和工程工具。早期文章保留原始语境与发布时间，内容可能对应当时的软件版本，阅读时请结合当前文档判断。
+        本站记录软件工程开发中遇到的问题、分析过程、实现方法和可复用的经验，内容侧重 Web、后端、Linux
+        等方向；同时整理日常开发中常用的便捷工具，让重复操作更简单、更高效。
+      </p>
+      <p>
+        早期文章保留原始语境与发布时间，内容可能对应当时的软件版本，阅读时请结合当前文档判断。站内工具均在浏览器本地运行，可从
+        <a href="/tool">工具页面</a> 使用。
       </p>
       <h2>实现</h2>
       <p>
