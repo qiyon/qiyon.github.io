@@ -1,8 +1,12 @@
 import { readdir, readFile, stat } from "node:fs/promises";
-import { join } from "node:path";
+import { basename, join } from "node:path";
 
 const EXPECTED_POST_COUNT = 70;
 const DIST_DIRECTORY = "dist";
+const sourceFiles = (await readdir("posts", { recursive: true })).filter((file) =>
+  file.endsWith(".md"),
+);
+const sourcesById = new Map(sourceFiles.map((file) => [basename(file, ".md"), file]));
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(`[validate:routes] ${message}`);
@@ -53,6 +57,8 @@ assert(
 );
 
 for (const id of postIds) {
+  const sourcePath = sourcesById.get(id);
+  assert(sourcePath, `/post/${id}/ 没有对应的 Markdown 源文件`);
   const routeFile = join(postRoot, id, "index.html");
   assert(await isFile(routeFile), `缺少文章页面：/post/${id}/`);
   const html = await readFile(routeFile, "utf8");
@@ -60,7 +66,9 @@ for (const id of postIds) {
   assert(h1Count === 1, `/post/${id}/ 应只有一个 H1，实际为 ${h1Count}`);
   for (const action of ["blob", "edit"]) {
     assert(
-      html.includes(`https://github.com/qiyon/qiyon.github.io/${action}/master/posts/${id}.md`),
+      html.includes(
+        `https://github.com/qiyon/qiyon.github.io/${action}/master/posts/${sourcePath}`,
+      ),
       `/post/${id}/ 的 GitHub ${action} 链接无效`,
     );
   }

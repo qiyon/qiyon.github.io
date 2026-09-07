@@ -8,13 +8,13 @@ export const siteConfig = {
   github: {
     repository: "https://github.com/qiyon/qiyon.github.io",
     branch: "master",
-    contentDirectory: "posts",
   },
 } as const;
 
-export function postSourceUrl(id: string, action: "blob" | "edit") {
-  const { repository, branch, contentDirectory } = siteConfig.github;
-  return `${repository}/${action}/${branch}/${contentDirectory}/${encodeURIComponent(id)}.md`;
+export function postSourceUrl(sourcePath: string, action: "blob" | "edit") {
+  const { repository, branch } = siteConfig.github;
+  const path = sourcePath.split("/").map(encodeURIComponent).join("/");
+  return `${repository}/${action}/${branch}/${path}`;
 }
 
 export function formatPostDate(date: Date) {

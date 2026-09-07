@@ -4,14 +4,14 @@ import Prose from "../components/Prose.astro";
 import { formatPostDate, postSourceUrl } from "../config";
 
 interface Props {
-  id: string;
+  sourcePath: string;
   title: string;
   publishedAt: Date;
   tags: string[];
   description?: string;
 }
 
-const { id, title, publishedAt, tags, description } = Astro.props;
+const { sourcePath, title, publishedAt, tags, description } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} type="article" publishedAt={publishedAt}>
@@ -28,8 +28,8 @@ const { id, title, publishedAt, tags, description } = Astro.props;
         {tags.map((tag) => <a href={`/?tag=${encodeURIComponent(tag)}`} rel="tag">#{tag}</a>)}
       </div>
       <div class="source-actions">
-        <a class="button button-secondary" href={postSourceUrl(id, "blob")}>在 GitHub 查看</a>
-        <a class="button button-secondary" href={postSourceUrl(id, "edit")}>在 GitHub 编辑</a>
+        <a class="button button-secondary" href={postSourceUrl(sourcePath, "blob")}>在 GitHub 查看</a>
+        <a class="button button-secondary" href={postSourceUrl(sourcePath, "edit")}>在 GitHub 编辑</a>
       </div>
     </header>
     <Prose>

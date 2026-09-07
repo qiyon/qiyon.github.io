@@ -22,7 +22,9 @@ function splitMarkdown(markdown: string, id: string) {
   return { frontmatter: match[1], body: match[2] };
 }
 
-const files = (await readdir(CONTENT_DIRECTORY)).filter((file) => file.endsWith(".md")).sort();
+const files = (await readdir(CONTENT_DIRECTORY, { recursive: true }))
+  .filter((file) => file.endsWith(".md"))
+  .sort();
 assert(
   files.length === EXPECTED_POST_COUNT,
   `应有 ${EXPECTED_POST_COUNT} 篇，实际为 ${files.length} 篇`,
@@ -45,6 +47,8 @@ for (const file of files) {
       !Number.isNaN(Date.parse(data.publishedAt)),
     `${id} 发布时间无效`,
   );
+  const month = data.publishedAt.slice(0, 7).replace("-", "");
+  assert(file === join(month, `${id}.md`), `${file} 应存放在 ${month}/ 目录下`);
   assert(
     Array.isArray(data.tags) &&
       data.tags.length > 0 &&

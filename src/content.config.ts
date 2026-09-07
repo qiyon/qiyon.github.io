@@ -1,4 +1,5 @@
 import { defineCollection } from "astro:content";
+import { basename } from "node:path";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
@@ -6,6 +7,7 @@ const posts = defineCollection({
   loader: glob({
     base: "./posts",
     pattern: "**/*.md",
+    generateId: ({ entry }) => basename(entry, ".md"),
   }),
   schema: z.object({
     title: z.string().min(1),

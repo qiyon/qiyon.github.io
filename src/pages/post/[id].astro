@@ -16,11 +16,12 @@ interface Props {
 }
 
 const { post } = Astro.props;
+if (!post.filePath) throw new Error(`文章 ${post.id} 缺少源文件路径`);
 const { Content } = await render(post);
 ---
 
 <PostLayout
-  id={post.id}
+  sourcePath={post.filePath}
   title={post.data.title}
   publishedAt={post.data.publishedAt}
   tags={post.data.tags}
