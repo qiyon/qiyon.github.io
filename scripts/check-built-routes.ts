@@ -58,7 +58,12 @@ for (const id of postIds) {
   const html = await readFile(routeFile, "utf8");
   const h1Count = html.match(/<h1(?:\s|>)/g)?.length ?? 0;
   assert(h1Count === 1, `/post/${id}/ 应只有一个 H1，实际为 ${h1Count}`);
-  assert(html.includes(`/src/content/posts/${id}.md`), `/post/${id}/ 的 GitHub 源文件链接无效`);
+  for (const action of ["blob", "edit"]) {
+    assert(
+      html.includes(`https://github.com/qiyon/qiyon.github.io/${action}/master/posts/${id}.md`),
+      `/post/${id}/ 的 GitHub ${action} 链接无效`,
+    );
+  }
   assert(!html.includes("posts.json"), `/post/${id}/ 仍引用 posts.json`);
   assert(!html.includes("/js/app.js"), `/post/${id}/ 仍引用旧客户端包`);
 }

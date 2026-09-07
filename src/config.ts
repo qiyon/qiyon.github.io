@@ -8,7 +8,7 @@ export const siteConfig = {
   github: {
     repository: "https://github.com/qiyon/qiyon.github.io",
     branch: "master",
-    contentDirectory: "src/content/posts",
+    contentDirectory: "posts",
   },
 } as const;
 

@@ -17,6 +17,6 @@ bun run dev
 bun run verify
 ```
 
-文章位于 `src/content/posts/`。新增文章时使用现有 Frontmatter 格式，文件名即稳定文章 ID 与 `/post/<id>/` 路由。
+文章位于根目录 `posts/`。新增文章时使用现有 Frontmatter 格式，文件名即稳定文章 ID 与 `/post/<id>/` 路由。
 
 构建产物写入 `dist/`，不提交到源码分支。

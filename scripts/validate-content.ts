@@ -3,7 +3,7 @@ import { basename, join } from "node:path";
 import { parse } from "yaml";
 
 const EXPECTED_POST_COUNT = 70;
-const CONTENT_DIRECTORY = "src/content/posts";
+const CONTENT_DIRECTORY = "posts";
 
 interface Frontmatter {
   title?: unknown;

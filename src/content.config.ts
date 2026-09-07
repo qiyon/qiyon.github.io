@@ -4,7 +4,7 @@ import { z } from "astro/zod";
 
 const posts = defineCollection({
   loader: glob({
-    base: "./src/content/posts",
+    base: "./posts",
     pattern: "**/*.md",
   }),
   schema: z.object({
